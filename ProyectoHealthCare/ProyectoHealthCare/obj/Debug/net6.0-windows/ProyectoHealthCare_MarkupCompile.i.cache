@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\mauva\Documents\ITAM\4to Semestre\BASES DE DATOS\ProyectoHealthCare\ProyectoHealthCare\App.xaml
-11407045341
+6-1414256785
 
-5258668935
+101830083313
 1942030480316
-MainWindow.xaml;
+Insights.xaml;MainWindow.xaml;MedicoCualquiera.xaml;MedicoGeneral.xaml;Permisos.xaml;Updates.xaml;
 
-False
+True
 

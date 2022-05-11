@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:ProyectoHealthCare"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFF606D6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Height="68" Margin="236,104,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Width="143" FontWeight="Bold" FontSize="36"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="279,172,0,0" TextWrapping="Wrap" Text="Correo Electronico:" VerticalAlignment="Top" Width="116" TextAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="279,217,0,0" TextWrapping="Wrap" Text="Contraseña:" VerticalAlignment="Top" Width="116" TextAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        <TextBox x:Name="correoelectronico" HorizontalAlignment="Left" Height="23" Margin="400,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF06080F"/>
+        <Rectangle HorizontalAlignment="Center" Height="52" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="780" Fill="White"/>
+        <TextBox x:Name="contraseña" HorizontalAlignment="Left" Height="23" Margin="400,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="Black"/>
+        <Image Margin="25,17,553,379" Source="/Image1.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

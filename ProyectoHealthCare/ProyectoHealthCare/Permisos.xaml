@@ -1,0 +1,22 @@
+﻿<Window x:Class="ProyectoHealthCare.Permisos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoHealthCare"
+        mc:Ignorable="d"
+        Title="Permisos" Height="450" Width="800">
+    <Grid>
+        <Image Margin="10,10,587,372" Source="/Image5.png" Stretch="Fill"/>
+        <TextBlock HorizontalAlignment="Left" Height="69" Margin="58,105,0,0" TextWrapping="Wrap" Text="PERMISOS" VerticalAlignment="Top" Width="385" FontWeight="Bold" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="89,179,0,0" TextWrapping="Wrap" Text="Nombre Doctor:" VerticalAlignment="Top" Width="105" TextAlignment="Right"/>
+        <ComboBox x:Name="pacientesNom" HorizontalAlignment="Left" Height="23" Margin="526,179,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="416,179,0,0" TextWrapping="Wrap" Text="Nombre Paciente:" VerticalAlignment="Top" Width="105" TextAlignment="Right"/>
+        <RadioButton Content="Dar" HorizontalAlignment="Left" Height="17" Margin="199,310,0,0" VerticalAlignment="Top" Width="90"/>
+        <RadioButton Content="Negar" HorizontalAlignment="Left" Height="17" Margin="199,332,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="100,310,0,0" TextWrapping="Wrap" Text="Estatus:" VerticalAlignment="Top" Width="94" TextAlignment="Right"/>
+        <Button x:Name="aplicar" Content="Aplicar" HorizontalAlignment="Left" Height="27" Margin="601,362,0,0" VerticalAlignment="Top" Width="159"/>
+        <ComboBox x:Name="nomDoctor" HorizontalAlignment="Left" Height="23" Margin="199,179,0,0" VerticalAlignment="Top" Width="165"/>
+
+    </Grid>
+</Window>
