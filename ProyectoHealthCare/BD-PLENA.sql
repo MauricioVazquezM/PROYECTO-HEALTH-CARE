@@ -1,4 +1,4 @@
---CreaciÛn de la base de datos
+--Creaci√≥n de la base de datos
 CREATE TABLE medico (
   id_medico numeric(4,0) constraint pk_medico primary key,
   nombre varchar(100) NOT null,
@@ -25,9 +25,9 @@ CREATE TABLE medico_especialidad (
   constraint pk_medico_especialidad primary key (id_medico, id_especialidad)
 );
 
-create type gen as enum('Mujer','Hombre','Mujer TransgÈnero','Hombre TransgÈnero','GÈnero no binario');
+create type gen as enum('Mujer','Hombre','Mujer Transg√©nero','Hombre Transg√©nero','G√©nero no binario');
 create type sexasig as enum('Femenino','Masculino','Intersexual');
-create type afirNeg as enum('SÌ','No');
+create type afirNeg as enum('S√≠','No');
 
 ------------------Informacion general del paciente-------------------
 
@@ -58,9 +58,9 @@ CREATE TABLE paciente_enfermedad (
   constraint pk_paciente_enfermedad primary key (id_paciente, id_enfermedad)
 );
 
-------------------GinecologÌa-------------------
+------------------Ginecolog√≠a-------------------
 
-create type firstmens as enum('Antes de los 10 aÒos','De los 10 aÒos a los 14 aÒos','DespuÈs de los 14 aÒos');
+create type firstmens as enum('Antes de los 10 a√±os','De los 10 a√±os a los 14 a√±os','Despu√©s de los 14 a√±os');
 
 CREATE TABLE ginecologia (
   id_ginecologia numeric(4,0) constraint pk_ginecologia primary key,
@@ -85,7 +85,7 @@ CREATE TABLE ginecologia_anticonceptivos (
   constraint pk_ginecologia_anticonceptivos primary key (id_ginecologia, id_anticonceptivos)
 );
 
-------------------NutriciÛn-------------------
+------------------Nutrici√≥n-------------------
 
 CREATE TABLE nutricion (
   id_nutricion numeric(4,0) constraint pk_nutricion primary key,
@@ -108,13 +108,13 @@ ALTER TABLE ejercicio ALTER COLUMN id_ejercicio SET DEFAULT nextval('ejercicio_i
 
 CREATE TABLE nutricion_ejercicio (
   id_nutricion numeric(4) references nutricion (id_nutricion) ON UPDATE CASCADE ON DELETE CASCADE,
-  id_ejercicio numeric(4) references anticonceptivos (id_anticonceptivos) ON UPDATE cascade,
+  id_ejercicio numeric(4) references ejercicio (id_ejercicio) ON UPDATE cascade,
   constraint pk_nutricion_ejercicio primary key (id_nutricion, id_ejercicio)
 );
 
--------------PsicologÌa---------------
+-------------Psicolog√≠a---------------
 
-create type tiempo_preo as enum('Hace m·s de un mes','Hace m·s de 2 semanas','Hace menos de 2 semanas');
+create type tiempo_preo as enum('Hace m√°s de un mes','Hace m√°s de 2 semanas','Hace menos de 2 semanas');
 create type frec as enum('Siempre','Pocas veces','Frecuentemente','Nunca');
 
 CREATE TABLE psicologia (
@@ -145,21 +145,21 @@ CREATE SEQUENCE sexologia_id_sexologia_seq START 1 INCREMENT 1 ;
 ALTER TABLE sexologia ALTER COLUMN id_sexologia SET DEFAULT nextval('sexologia_id_sexologia_seq');
 
 
-----------SueÒo-------------------------
+----------Sue√±o-------------------------
 
-CREATE TABLE sueÒo (
-  id_sueÒo numeric(4,0) constraint pk_sueÒo primary key,
-  horas_sueÒo numeric(4,2) not null, 
+CREATE TABLE sue√±o (
+  id_sue√±o numeric(4,0) constraint pk_sue√±o primary key,
+  horas_sue√±o numeric(4,2) not null, 
   ronca afirNeg not null,
   pararce_noche frec not null,
   pesadillas afirNeg not null,  
   id_paciente numeric(4) references paciente (id_paciente)
 );
-CREATE SEQUENCE sueÒo_id_sueÒo_seq START 1 INCREMENT 1 ;
-ALTER TABLE sueÒo ALTER COLUMN id_sueÒo SET DEFAULT nextval('sueÒo_id_sueÒo_seq');
+CREATE SEQUENCE sue√±o_id_sue√±o_seq START 1 INCREMENT 1 ;
+ALTER TABLE sue√±o ALTER COLUMN id_sue√±o SET DEFAULT nextval('sue√±o_id_sue√±o_seq');
 
 
-----------Tabla de relaciÛn entre paciente y doctor------
+----------Tabla de relaci√≥n entre paciente y doctor------
 
 CREATE TABLE paciente_medico (
   id_paciente numeric(4) references paciente (id_paciente) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -279,10 +279,10 @@ create table permisos_ginecologia (
 CREATE SEQUENCE permisos_ginecologia_id_permisos_ginecologia_seq START 1 INCREMENT 1;
 ALTER TABLE permisos_ginecologia ALTER COLUMN id_permisos_ginecologia SET DEFAULT nextval('permisos_ginecologia_id_permisos_ginecologia_seq');
 
-------------------Notas y permisos de sueÒo------------------------
+------------------Notas y permisos de sue√±o------------------------
 
-create table notas_sueÒo (
-	id_notas_sueÒo numeric (4) constraint pk_notas_sueÒo primary key,
+create table notas_sue√±o (
+	id_notas_sue√±o numeric (4) constraint pk_notas_sue√±o primary key,
 	id_paciente numeric(4) references paciente (id_paciente),
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
@@ -290,19 +290,19 @@ create table notas_sueÒo (
 	vigente bool not null
 );
 
-CREATE SEQUENCE notas_sueÒo_id_notas_sueÒo_seq START 1 INCREMENT 1;
-ALTER TABLE notas_sueÒo ALTER COLUMN id_notas_sueÒo SET DEFAULT nextval('notas_sueÒo_id_notas_sueÒo_seq');
+CREATE SEQUENCE notas_sue√±o_id_notas_sue√±o_seq START 1 INCREMENT 1;
+ALTER TABLE notas_sue√±o ALTER COLUMN id_notas_sue√±o SET DEFAULT nextval('notas_sue√±o_id_notas_sue√±o_seq');
 
 
-create table permisos_sueÒo (
-	id_permisos_sueÒo numeric (4) constraint pk_permisos_sueÒo primary key,
+create table permisos_sue√±o (
+	id_permisos_sue√±o numeric (4) constraint pk_permisos_sue√±o primary key,
 	id_paciente numeric(4) references paciente (id_paciente),
 	id_medico numeric(4) references medico (id_medico),
 	permiso bool not null 
 );
 
-CREATE SEQUENCE permisos_sueÒo_id_permisos_sueÒo_seq START 1 INCREMENT 1;
-ALTER TABLE permisos_sueÒo ALTER COLUMN id_permisos_sueÒo SET DEFAULT nextval('permisos_sueÒo_id_permisos_sueÒo_seq');
+CREATE SEQUENCE permisos_sue√±o_id_permisos_sue√±o_seq START 1 INCREMENT 1;
+ALTER TABLE permisos_sue√±o ALTER COLUMN id_permisos_sue√±o SET DEFAULT nextval('permisos_sue√±o_id_permisos_sue√±o_seq');
 
 
 
