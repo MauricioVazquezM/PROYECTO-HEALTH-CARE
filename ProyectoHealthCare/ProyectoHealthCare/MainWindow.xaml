@@ -11,7 +11,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Height="68" Margin="236,104,0,0" TextWrapping="Wrap" Text="LOG IN" VerticalAlignment="Top" Width="143" FontWeight="Bold" FontSize="36"/>
-        <TextBox x:Name="correoelectronico" HorizontalAlignment="Left" Height="23" Margin="400,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF06080F"/>
+        <TextBox x:Name="correoelectronico" HorizontalAlignment="Left" Height="23" Margin="400,172,0,0" TextWrapping="Wrap" Text="usuario@plenna.mx" VerticalAlignment="Top" Width="220" BorderBrush="#FF06080F" FontFamily="Arial" FontStyle="Italic" Visibility="Visible" Opacity="0.495" TextAlignment="Center"/>
         <Rectangle HorizontalAlignment="Center" Height="52" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="780" Fill="White"/>
         <Image HorizontalAlignment="Left" Height="68" Margin="81,16,0,0" VerticalAlignment="Top" Width="153" Source="/Image1.png" RenderTransformOrigin="0.933,0.454"/>
         <PasswordBox x:Name="contra" HorizontalAlignment="Left" Height="25" Margin="400,217,0,0" VerticalAlignment="Top" Width="220" BorderBrush="#FF060708" RenderTransformOrigin="0.498,-0.012"/>

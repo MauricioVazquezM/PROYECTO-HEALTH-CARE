@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoHealthCare.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace ProyectoHealthCare
         public MedicoCualquiera()
         {
             InitializeComponent();
+            CConexion.llenarComboPacientes(pacientes);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

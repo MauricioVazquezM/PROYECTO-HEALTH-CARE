@@ -25,82 +25,34 @@ namespace ProyectoHealthCare
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String correoInsert = correoelectronico.Text;
-            String contraInsert = contra.GetHashCode().ToString();
+            String contraInsert = contra.Password.ToString();
 
-            int res = 0;
+            int res;
             res = Clases.CConexion.verificacionUsuario(correoInsert, contraInsert);
-            if (res == 1)
+            if (res == 2)
             {
                 MedicoGeneral MiVentana = new MedicoGeneral();
                 MiVentana.Owner = this;
                 MiVentana.Show();
                 this.Hide();
             }
-            else
+            else if(res == 1)
             {
                 MedicoCualquiera MiVentana = new MedicoCualquiera();
                 MiVentana.Owner = this;
                 MiVentana.Show();
                 this.Hide();
-                //if (res == 1)
-                //{
-                //    MedicoCualquiera MiVentana = new MedicoCualquiera();
-                //    MiVentana.Owner = this;
-                //    MiVentana.Show();
-                //    this.Hide();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Su correo o contrasena es invalido");
-                //}
-
             }
-
-
-            //try
-            //{
-            //    // PostgeSQL-style connection string
-            //    string connstring = "server=postgres;port=5432;user id=postgres;password=mauri245;database=postgres;";
-            //    // Making connection with Npgsql provider
-            //    NpgsqlConnection conn = new NpgsqlConnection(connstring);
-            //    conn.Open();
-            //    // quite complex sql statement
-            //    String sql = "1"; //String.Format("SELECT m.medico_general FROM 'Plenna'.medico m where m.correo{0}", correoelectronico.Text);
-
-            //    if (res == 1)
-            //    {
-            //        if (sql == "1")
-            //        {
-            //            MedicoCualquiera MiVentana = new MedicoCualquiera();
-            //            MiVentana.Owner = this;
-            //            MiVentana.Show();
-            //            this.Hide();
-            //        }
-            //        else
-            //        {
-            //            MedicoGeneral MiVentana = new MedicoGeneral();
-            //            MiVentana.Owner = this;
-            //            MiVentana.Show();
-            //            this.Hide();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("El correo o la contrasena es invalido");
-            //    }
-            //    conn.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error: " + ex);
-            //}
-
+            else
+            {
+                MessageBox.Show("CORREO O CONTRASEÑA INCORRECTA");
+            }
+            
         }
     }
 }

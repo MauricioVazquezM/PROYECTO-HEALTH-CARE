@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ProyectoHealthCare.Clases
 {
@@ -27,7 +28,7 @@ namespace ProyectoHealthCare.Clases
             NpgsqlConnection con;
             try
             {
-                con = new NpgsqlConnection("Host=localhost;database=Plenna;user id=postgres;password=mauri245");
+                con = new NpgsqlConnection("Host=localhost;database=mil;user id=postgres;password=mauri245");
                 con.Open();
             }
             catch (Exception)
@@ -47,23 +48,21 @@ namespace ProyectoHealthCare.Clases
                 NpgsqlCommand cmd = new NpgsqlCommand(String.Format("select m.contra from medico m where m.correo='{0}'", correo), con);
                 NpgsqlDataReader rd = cmd.ExecuteReader();
                 
-                if(rd.Read())
+                if (rd.Read())
                 {
-                    MessageBox.Show(contra);
- 
-                    if (contra == rd.GetString(0).GetHashCode().ToString())
+                    if (contra == rd.GetString(0))
                     {
                         res = 1;
-                        //if (correo == "meredith@plenna.mx")
-                        //{
-                        //    res = 2;
-                        //}
+                        if(correo == "meredith@plenna.mx")
+                        {
+                            res = 2;
+                        }
                     }
-                    con.Close();
-                    
+
+                    rd.Close();
                 }
-                rd.Close();
-                
+             
+                con.Close();
             }
             catch (Exception msg)
             {
@@ -73,7 +72,28 @@ namespace ProyectoHealthCare.Clases
             return res;
         }
 
-       
+        public static void llenarComboPacientes(ComboBox dd)
+        {
+            try
+            {
+                NpgsqlConnection con = establecerConexion();
+                NpgsqlCommand cmd = new NpgsqlCommand("SELECT p.nombre FROM paciente p", con);
+                NpgsqlDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    dd.Items.Add(rd.GetString(0));
+                }
+                dd.SelectedIndex = 0; 
+                rd.Close();
+                con.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al llenar el comboBox");
+            }
+        }
+
     }
 }
 
