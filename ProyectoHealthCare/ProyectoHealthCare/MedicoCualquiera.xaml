@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         Title="MedicoCualquiera" Height="450" Width="800">
     <Grid>
-        <Image Margin="10,10,587,372" Source="/Image4.png" Stretch="Fill"/>
         <ComboBox x:Name="pacientes" HorizontalAlignment="Left" Height="21" Margin="515,194,0,0" VerticalAlignment="Top" Width="233"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="515,167,0,0" TextWrapping="Wrap" Text="Pacientes:" VerticalAlignment="Top" Width="193" FontSize="18"/>
         <Button x:Name="updateE" Content="UPDATE" HorizontalAlignment="Left" Height="32" Margin="515,303,0,0" VerticalAlignment="Top" Width="233" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="363,31,0,0" TextWrapping="Wrap" Text="Nombre:" VerticalAlignment="Top" Width="94" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="363,59,0,0" TextWrapping="Wrap" Text="Especialidad:" VerticalAlignment="Top" Width="94" TextAlignment="Right"/>
         <TextBox x:Name="nombreDoc" HorizontalAlignment="Left" Height="14" Margin="462,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
         <TextBox x:Name="especialidadDoc" HorizontalAlignment="Left" Height="14" Margin="462,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
         <TextBox x:Name="fotoDoc" HorizontalAlignment="Left" Height="109" Margin="616,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132"/>
         <Button x:Name="verInfo" Content="VER INFORMACION PACIENTE" HorizontalAlignment="Left" Height="35" Margin="515,358,0,0" VerticalAlignment="Top" Width="233"/>
+        <Image HorizontalAlignment="Left" Height="56" Margin="10,10,0,0" VerticalAlignment="Top" Width="179" Source="/Image1.png"/>
+        <Label Content="Pacientes" HorizontalAlignment="Left" Height="27" Margin="515,162,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Height="24" Margin="409,26,0,0" VerticalAlignment="Top" Width="59" FontSize="10" RenderTransformOrigin="0.766,0.548"/>
+        <Label Content="Especialidad:" HorizontalAlignment="Left" Height="23" Margin="392,53,0,0" VerticalAlignment="Top" Width="70" FontSize="10"/>
 
     </Grid>
 </Window>

@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MedicoGeneral" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="33" Margin="69,92,0,0" TextWrapping="Wrap" Text="MEDICO GENERAL" VerticalAlignment="Top" Width="285" FontWeight="Bold" FontSize="24"/>
         <Button x:Name="permisos" Content="PERMISOS" HorizontalAlignment="Left" Height="31" Margin="513,231,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
-        <Image Margin="10,10,587,372" Source="/Image3.png" Stretch="Fill"/>
-        <TextBlock HorizontalAlignment="Left" Height="28" Margin="363,31,0,0" TextWrapping="Wrap" Text="Nombre:" VerticalAlignment="Top" Width="94" TextAlignment="Right"/>
         <TextBox x:Name="nombreDoc" HorizontalAlignment="Left" Height="14" Margin="462,31,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="140"/>
         <TextBox x:Name="fotoDoc" HorizontalAlignment="Left" Height="109" Margin="616,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132"/>
         <Button x:Name="updates" Content="UPDATES" HorizontalAlignment="Left" Height="31" Margin="513,301,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
         <Button x:Name="busquedaInteligente" Content="BUSQUEDA INTELIGENTE" HorizontalAlignment="Left" Height="31" Margin="513,369,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="185" Source="/Image1.png"/>
+        <Label Content="MEDICO GENERAL" HorizontalAlignment="Left" Height="49" Margin="102,95,0,0" VerticalAlignment="Top" Width="198" FontWeight="Bold" FontSize="18"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Height="33" Margin="411,29,0,0" VerticalAlignment="Top" Width="83" FontSize="10"/>
 
     </Grid>
 </Window>
