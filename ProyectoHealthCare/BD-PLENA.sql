@@ -6,7 +6,9 @@ CREATE TABLE medico (
   direccion varchar(200) not null,
   numero numeric (10) not null,
   posicion varchar (50) not null,
-  edad numeric(2,0) not null
+  edad numeric(2,0) not null,
+  correo varchar (100) not null,
+  contra varchar (100) not null
 );
 
 CREATE SEQUENCE medico_id_medico_seq START 1 INCREMENT 1 ;
@@ -60,7 +62,7 @@ CREATE TABLE paciente_enfermedad (
 
 ------------------Ginecología-------------------
 
-create type firstmens as enum('Antes de los 10 años','De los 10 años a los 14 años','Después de los 14 años');
+create type firstmens as enum('Antes de los 10 anos','De los 10 anos a los 14 anos','Después de los 14 anos');
 
 CREATE TABLE ginecologia (
   id_ginecologia numeric(4,0) constraint pk_ginecologia primary key,
@@ -145,18 +147,18 @@ CREATE SEQUENCE sexologia_id_sexologia_seq START 1 INCREMENT 1 ;
 ALTER TABLE sexologia ALTER COLUMN id_sexologia SET DEFAULT nextval('sexologia_id_sexologia_seq');
 
 
-----------Sueño-------------------------
+----------Sueno-------------------------
 
-CREATE TABLE sueño (
-  id_sueño numeric(4,0) constraint pk_sueño primary key,
-  horas_sueño numeric(4,2) not null, 
+CREATE TABLE sueno (
+  id_sueno numeric(4,0) constraint pk_sueno primary key,
+  horas_sueno numeric(4,2) not null, 
   ronca afirNeg not null,
   pararce_noche frec not null,
   pesadillas afirNeg not null,  
   id_paciente numeric(4) references paciente (id_paciente)
 );
-CREATE SEQUENCE sueño_id_sueño_seq START 1 INCREMENT 1 ;
-ALTER TABLE sueño ALTER COLUMN id_sueño SET DEFAULT nextval('sueño_id_sueño_seq');
+CREATE SEQUENCE sueno_id_sueno_seq START 1 INCREMENT 1 ;
+ALTER TABLE sueno ALTER COLUMN id_sueno SET DEFAULT nextval('sueno_id_sueno_seq');
 
 
 ----------Tabla de relación entre paciente y doctor------
@@ -279,10 +281,10 @@ create table permisos_ginecologia (
 CREATE SEQUENCE permisos_ginecologia_id_permisos_ginecologia_seq START 1 INCREMENT 1;
 ALTER TABLE permisos_ginecologia ALTER COLUMN id_permisos_ginecologia SET DEFAULT nextval('permisos_ginecologia_id_permisos_ginecologia_seq');
 
-------------------Notas y permisos de sueño------------------------
+------------------Notas y permisos de sueno------------------------
 
-create table notas_sueño (
-	id_notas_sueño numeric (4) constraint pk_notas_sueño primary key,
+create table notas_sueno (
+	id_notas_sueno numeric (4) constraint pk_notas_sueno primary key,
 	id_paciente numeric(4) references paciente (id_paciente),
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
@@ -290,19 +292,59 @@ create table notas_sueño (
 	vigente bool not null
 );
 
-CREATE SEQUENCE notas_sueño_id_notas_sueño_seq START 1 INCREMENT 1;
-ALTER TABLE notas_sueño ALTER COLUMN id_notas_sueño SET DEFAULT nextval('notas_sueño_id_notas_sueño_seq');
+CREATE SEQUENCE notas_sueno_id_notas_sueno_seq START 1 INCREMENT 1;
+ALTER TABLE notas_sueno ALTER COLUMN id_notas_sueno SET DEFAULT nextval('notas_sueno_id_notas_sueno_seq');
 
 
-create table permisos_sueño (
-	id_permisos_sueño numeric (4) constraint pk_permisos_sueño primary key,
+create table permisos_sueno (
+	id_permisos_sueno numeric (4) constraint pk_permisos_sueno primary key,
 	id_paciente numeric(4) references paciente (id_paciente),
 	id_medico numeric(4) references medico (id_medico),
 	permiso bool not null 
 );
 
-CREATE SEQUENCE permisos_sueño_id_permisos_sueño_seq START 1 INCREMENT 1;
-ALTER TABLE permisos_sueño ALTER COLUMN id_permisos_sueño SET DEFAULT nextval('permisos_sueño_id_permisos_sueño_seq');
+CREATE SEQUENCE permisos_sueno_id_permisos_sueno_seq START 1 INCREMENT 1;
+ALTER TABLE permisos_sueno ALTER COLUMN id_permisos_sueno SET DEFAULT nextval('permisos_sueno_id_permisos_sueno_seq');
 
 
+insert into medico  
+(nombre, apellido, direccion, numero, posicion ,edad, correo,contra)
+values
+('Meredith','Grey','Reforma #23', '2378564352',true,34,'meredith@plenna.mx','medicinageneral'),
+('Gregory', 'House','Insurgentes #17', '9786543521',false,42,'gregory@plenna.mx','dogcat97');
 
+
+insert into paciente  
+(nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
+values
+('Julian Gutierrez', 24, 'albanil','Hombre','Masculino','No','Ninguno'),
+('Mau Nieto', 21, 'futbolista','Hombre','Masculino','Sí','Paracetamol'),
+('Carolina Ramirez', 19, 'secretaria','Mujer','Femenino','No','Ninguno'),
+('Paola Sanchez', 16, 'estudiante','Mujer','Femenino','Sí','Aspirina');
+
+
+insert into paciente_medico
+(id_paciente,id_medico)
+values 
+(1,2),
+(2,2),
+(3,2);
+
+insert into especialidad 
+(nombre)
+values 
+('Ginecologia'),
+('Sexologia'),
+('Psicologia'),
+('Nutricion'),
+('Sueno');
+
+insert into medico_especialidad 
+(id_medico,id_especialidad)
+values 
+(2,4);
+
+insert into sueno 
+(horas_sueno,ronca,pararce_noche,pesadillas,id_paciente)
+values 
+(8,'Sí','Frecuentemente','No',4);
