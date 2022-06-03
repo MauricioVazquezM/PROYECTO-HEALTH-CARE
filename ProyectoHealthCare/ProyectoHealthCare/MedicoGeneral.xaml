@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="MedicoGeneral" Height="450" Width="800">
     <Grid>
-        <Button x:Name="permisos" Content="PERMISOS" HorizontalAlignment="Left" Height="30" Margin="34,354,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
-        <Button x:Name="updates" Content="UPDATES" HorizontalAlignment="Left" Height="31" Margin="34,307,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
-        <Button x:Name="busquedaInteligente" Content="BUSQUEDA INTELIGENTE" HorizontalAlignment="Left" Height="31" Margin="34,262,0,0" VerticalAlignment="Top" Width="246" Click="acceso_Click"/>
+        <Button x:Name="permisos" Content="PERMISOS" HorizontalAlignment="Left" Height="30" Margin="45,379,0,0" VerticalAlignment="Top" Width="198" Click="acceso_Click"/>
+        <Button x:Name="updates" Content="UPDATES" HorizontalAlignment="Left" Height="31" Margin="564,380,0,0" VerticalAlignment="Top" Width="182" Click="acceso_Click"/>
+        <Button x:Name="busquedaInteligente" Content="BUSQUEDA INTELIGENTE" HorizontalAlignment="Center" Height="32" Margin="0,379,0,0" VerticalAlignment="Top" Width="220" Click="acceso_Click"/>
         <Image HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="185" Source="/Image1.png"/>
         <Label Content="MEDICO GENERAL" HorizontalAlignment="Left" Height="49" Margin="34,213,0,0" VerticalAlignment="Top" Width="198" FontWeight="Bold" FontSize="18"/>
         <Label x:Name="nombre" Content="Nombre:" HorizontalAlignment="Left" Height="33" Margin="72,193,0,0" VerticalAlignment="Top" Width="123" FontSize="16" FontFamily="Agency FB"/>
         <Image HorizontalAlignment="Left" Height="131" Margin="45,57,0,0" VerticalAlignment="Top" Width="138" Source="/doctoraPlenna.png"/>
+        <ComboBox x:Name ="pacientes" HorizontalAlignment="Left" Margin="45,304,0,0" VerticalAlignment="Top" Width="138" Height="34"/>
+        <Label Content="Pacientes:" HorizontalAlignment="Left" Margin="34,262,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="692,70,0,0" VerticalAlignment="Top" Height="32" Width="83" Background="#FFC85131" Click="Button_Click_1" FontWeight="Normal" RenderTransformOrigin="0.5,0"/>
+        <Button Content="Configuración" HorizontalAlignment="Left" Margin="692,23,0,0" VerticalAlignment="Top" Height="33" Width="83" Background="#FFE0DCE0" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

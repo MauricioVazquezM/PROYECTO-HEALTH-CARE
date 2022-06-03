@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Configuracion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="InfoPac.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
     <Compile Update="MedicoGeneral.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Notas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Permisos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +33,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Configuracion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="InfoPac.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -40,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MedicoGeneral.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Notas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Permisos.xaml">

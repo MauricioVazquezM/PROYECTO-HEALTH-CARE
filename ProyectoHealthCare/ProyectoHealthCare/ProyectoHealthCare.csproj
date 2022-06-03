@@ -8,17 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="confi.jpg" />
+    <None Remove="configuracion.png" />
     <None Remove="doctoraP.png" />
     <None Remove="doctoraPlenna.png" />
     <None Remove="Image1.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.3.0" />
     <PackageReference Include="Npgsql" Version="6.0.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="confi.jpg" />
+    <Resource Include="configuracion.png" />
     <Resource Include="doctoraP.png" />
     <Resource Include="doctoraPlenna.png" />
     <Resource Include="Image1.png" />

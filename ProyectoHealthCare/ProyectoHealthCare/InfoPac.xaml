@@ -7,12 +7,25 @@
         mc:Ignorable="d"
         Title="InfoPac" Height="450" Width="800">
     <Grid>
-        <Label Content="Información de el/la paciente:" HorizontalAlignment="Left" Height="35" Margin="30,95,0,0" VerticalAlignment="Top" Width="272" FontFamily="Agency FB" FontSize="23" FontWeight="Normal" FontStyle="Italic"/>
-        <Image HorizontalAlignment="Left" Height="47" Margin="18,22,0,0" VerticalAlignment="Top" Width="475" Source="/Image1.png"/>
-        <Label x:Name="nombre" Content="Label" HorizontalAlignment="Left" Margin="287,95,0,0" VerticalAlignment="Top" Width="254" FontFamily="Agency FB" FontSize="23"/>
-        <ComboBox x:Name = "especialidad" HorizontalAlignment="Left" Margin="63,195,0,0" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name = "grid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="261,168,57,75"/>
-        <Label Content="Seleccione la especialidad" HorizontalAlignment="Left" Margin="30,159,0,0" VerticalAlignment="Top" Height="53" Width="211" FontFamily="Agency FB" FontSize="23"/>
-        <Button Content="Cargar datos" HorizontalAlignment="Left" Margin="73,366,0,0" VerticalAlignment="Top" Height="22" Width="93" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Información de el/la paciente:" HorizontalAlignment="Left" Height="35" Margin="30,95,0,0" VerticalAlignment="Top" Width="272" FontFamily="Agency FB" FontSize="23" FontWeight="Normal" FontStyle="Italic" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="47" Margin="18,22,0,0" VerticalAlignment="Top" Width="475" Source="/Image1.png" Grid.ColumnSpan="2"/>
+        <Label x:Name="nombre" Content="Label" HorizontalAlignment="Left" Margin="11,95,0,0" VerticalAlignment="Top" Width="254" FontFamily="Agency FB" FontSize="23" Grid.Column="1"/>
+        <ComboBox x:Name = "especialidad" HorizontalAlignment="Left" Margin="213,53,0,0" VerticalAlignment="Top" Width="153" Height="39" Grid.Column="1"/>
+        <DataGrid x:Name = "grid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="30,297,288,10" Grid.ColumnSpan="2"/>
+        <Label Content="Seleccione la especialidad" HorizontalAlignment="Left" Margin="185,10,0,0" VerticalAlignment="Top" Height="53" Width="211" FontFamily="Agency FB" FontSize="23" Grid.Column="1"/>
+        <Button Content="Cargar datos" HorizontalAlignment="Left" Margin="244,108,0,0" VerticalAlignment="Top" Height="22" Width="93" Click="Button_Click" Grid.Column="1"/>
+        <DataGrid x:Name = "general" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="30,172,288,179" Grid.ColumnSpan="2"/>
+        <Label Content="Información General" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23" FontWeight="Bold"/>
+        <Label Content="Información Especialidad" HorizontalAlignment="Left" Margin="30,255,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Agency FB" FontSize="23"/>
+        <DataGrid x:Name = "apoyo" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="263,297,30,10" Grid.Column="1"/>
+        <DataGrid x:Name = "enfermedades" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="254,172,30,179" Grid.Column="1"/>
+        <Label Content="Enfermedades" HorizontalAlignment="Left" Height="32" Margin="312,135,0,0" VerticalAlignment="Top" Width="153" FontFamily="Agency FB" FontSize="23" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="extra" Content="" HorizontalAlignment="Left" Margin="307,260,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23" FontWeight="Bold" Width="143" Grid.Column="1"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="410,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1" Grid.Column="1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="410,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2" Grid.Column="1"/>
     </Grid>
 </Window>

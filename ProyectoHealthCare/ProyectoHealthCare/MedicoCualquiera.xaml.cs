@@ -86,6 +86,7 @@ namespace ProyectoHealthCare
         {
             MainWindow MiVentana = new MainWindow();
             Application.Current.Properties.Remove("correo");
+            Application.Current.Properties.Remove("paciente");
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();
@@ -96,6 +97,24 @@ namespace ProyectoHealthCare
             String paciente = pacientes.Text;
             Application.Current.Properties["paciente"] = paciente;
             InfoPac MiVentana = new InfoPac();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Configuracion MiVentana = new Configuracion();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            String paciente = pacientes.Text;
+            Application.Current.Properties["paciente"] = paciente;
+            Notas MiVentana = new Notas();
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();

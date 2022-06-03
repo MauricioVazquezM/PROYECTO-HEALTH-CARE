@@ -1,0 +1,29 @@
+﻿<Window x:Class="ProyectoHealthCare.Notas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoHealthCare"
+        mc:Ignorable="d"
+        Title="Notas" Height="450" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top" Width="451" Source="/Image1.png"/>
+        <Label Content="notas de el/la paciente:" HorizontalAlignment="Left" Height="35" Margin="30,67,0,0" VerticalAlignment="Top" Width="272" FontFamily="Agency FB" FontSize="23" FontWeight="Normal" FontStyle="Italic"/>
+        <Label x:Name="nombre" Content="Label" HorizontalAlignment="Left" Margin="250,66,0,0" VerticalAlignment="Top" Width="254" FontFamily="Agency FB" FontSize="23"/>
+        <DataGrid x:Name="gridNutricion" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="30,234,400,130"/>
+        <DataGrid x:Name="gridGeneral" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="30,138,400,226"/>
+        <DataGrid x:Name="gridPsicologia" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,138,25,226"/>
+        <DataGrid x:Name="gridSueno" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,341,25,23"/>
+        <DataGrid x:Name="gridGinecologia" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="30,341,400,23"/>
+        <DataGrid x:Name="gridSexologia" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="405,234,25,130"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="686,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="686,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2"/>
+        <Label Content="Generales" HorizontalAlignment="Left" Margin="166,107,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Sueño" HorizontalAlignment="Left" Margin="551,309,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Ginecología" HorizontalAlignment="Left" Margin="166,309,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Sexología" HorizontalAlignment="Left" Margin="551,208,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Nutrición" HorizontalAlignment="Left" Margin="166,208,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Psicología" HorizontalAlignment="Left" Margin="551,104,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="20" RenderTransformOrigin="0.498,-0.222" FontWeight="Bold" FontStyle="Italic"/>
+
+    </Grid>
+</Window>

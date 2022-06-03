@@ -1,0 +1,22 @@
+﻿<Window x:Class="ProyectoHealthCare.Configuracion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoHealthCare"
+        mc:Ignorable="d"
+        Title="Configuracion" Height="450" Width="800">
+    <Grid>
+        <Label Content="Cambiar contraseña" HorizontalAlignment="Center" Height="43" Margin="0,53,0,0" VerticalAlignment="Top" Width="252" FontFamily="Agency FB" FontSize="25" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Contraseña actual" HorizontalAlignment="Left" Height="38" Margin="167,126,0,0" VerticalAlignment="Top" Width="180" FontFamily="Agency FB" FontSize="23"/>
+        <Label Content="Nueva contraseña" HorizontalAlignment="Left" Height="44" Margin="167,0,0,0" VerticalAlignment="Center" Width="220" FontFamily="Agency FB" FontSize="23"/>
+        <Label Content="Confirme nueva contraseña" HorizontalAlignment="Left" Margin="167,275,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <PasswordBox x:Name ="confirmacion" HorizontalAlignment="Left" Margin="400,275,0,0" VerticalAlignment="Top" Width="220" Height="28"/>
+        <PasswordBox x:Name ="nueva" HorizontalAlignment="Left" Margin="400,0,0,0" VerticalAlignment="Center" Width="220" Height="28"/>
+        <PasswordBox x:Name ="actual" HorizontalAlignment="Left" Margin="400,136,0,0" VerticalAlignment="Top" Width="220" Height="28"/>
+        <Button Content="Confirmar" HorizontalAlignment="Left" Margin="302,353,0,0" VerticalAlignment="Top" Height="44" Width="125" FontFamily="Agency FB" FontSize="23" Background="#FFD8E6E9" Click="Button_Click_1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="44" Margin="466,353,0,0" VerticalAlignment="Top" Width="128" FontFamily="Agency FB" FontSize="23" Background="#FFEBE3E3" Click="Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top" Width="451" Source="/Image1.png"/>
+
+    </Grid>
+</Window>

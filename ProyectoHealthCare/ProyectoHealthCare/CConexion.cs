@@ -28,7 +28,7 @@ namespace ProyectoHealthCare.Clases
             NpgsqlConnection con;
             try
             {
-                con = new NpgsqlConnection("Host=localhost;database=plenna;user id=postgres;password=mauri245");
+                con = new NpgsqlConnection("Host=localhost;database=aprox;user id=postgres;password=mauri245");
                 con.Open();
             }
             catch (Exception)
@@ -110,17 +110,40 @@ namespace ProyectoHealthCare.Clases
             }
         }
 
-        public static void DatosContactos(DataGrid gv)
+
+        public static void llenarComboPacientesGen(ComboBox dd)
         {
-            String pa = Application.Current.Properties["paciente"].ToString();
             try
             {
                 NpgsqlConnection con = establecerConexion();
-                NpgsqlCommand cmd = new NpgsqlCommand(String.Format("Select * from sueno inner join paciente p using (id_paciente) where p.nombre = '{0}'", pa), con);
+                NpgsqlCommand cmd = new NpgsqlCommand("select p.nombre from paciente p", con);
                 NpgsqlDataReader rd = cmd.ExecuteReader();
-                gv.ItemsSource = rd;
-                gv.DataBind();
+            
+                while (rd.Read())
+                {
+                    dd.Items.Add(rd.GetString(0));
+                }
                 rd.Close();
+                dd.SelectedIndex = 0;
+                con.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al llenar el comboBox");
+            }
+        }
+
+        public static void DatosPacientes(DataGrid gv, String es, int idp)
+        {
+
+            try
+            {
+                NpgsqlConnection con = establecerConexion();
+                NpgsqlCommand cmd1 = new NpgsqlCommand(String.Format("Select * from {0} where id_paciente = {1}",es,idp), con);
+                NpgsqlDataReader rd1 = cmd1.ExecuteReader();
+                gv.ItemsSource = rd1;
+
+
             }
             catch (Exception)
             {

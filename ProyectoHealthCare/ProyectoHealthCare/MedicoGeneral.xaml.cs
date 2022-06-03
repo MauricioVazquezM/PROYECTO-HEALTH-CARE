@@ -23,7 +23,7 @@ namespace ProyectoHealthCare
         public MedicoGeneral()
         {
             InitializeComponent();
-
+            Clases.CConexion.llenarComboPacientesGen(pacientes);
 
             String correo = Application.Current.Properties["correo"].ToString();
             NpgsqlConnection con = Clases.CConexion.establecerConexion();
@@ -42,7 +42,30 @@ namespace ProyectoHealthCare
 
         private void acceso_Click(object sender, RoutedEventArgs e)
         {
+            String paciente = pacientes.Text;
+            Application.Current.Properties["paciente"] = paciente;
+            InfoPac MiVentana = new InfoPac();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow MiVentana = new MainWindow();
+            Application.Current.Properties.Remove("correo");
+            Application.Current.Properties.Remove("paciente");
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Configuracion MiVentana = new Configuracion();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
         }
     }
 }
