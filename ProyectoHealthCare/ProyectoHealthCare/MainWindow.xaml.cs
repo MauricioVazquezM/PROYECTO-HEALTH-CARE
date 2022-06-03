@@ -31,6 +31,7 @@ namespace ProyectoHealthCare
         {
             String correoInsert = correoelectronico.Text;
             String contraInsert = contra.Password.ToString();
+            Application.Current.Properties["correo"] = correoInsert;
 
             int res;
             res = Clases.CConexion.verificacionUsuario(correoInsert, contraInsert);

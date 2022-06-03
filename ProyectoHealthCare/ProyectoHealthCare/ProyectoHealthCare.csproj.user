@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="InfoPac.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Insights.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="InfoPac.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Insights.xaml">
       <SubType>Designer</SubType>
     </Page>

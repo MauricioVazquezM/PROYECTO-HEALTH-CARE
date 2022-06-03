@@ -22,6 +22,7 @@ namespace ProyectoHealthCare
         public Updates()
         {
             InitializeComponent();
+            paciente.Content = Application.Current.Properties["paciente"].ToString();
         }
     }
 }
