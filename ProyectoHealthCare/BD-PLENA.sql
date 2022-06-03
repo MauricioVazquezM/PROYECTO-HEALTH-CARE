@@ -313,6 +313,12 @@ values
 ('Meredith','Grey','Reforma #23', '2378564352',true,34,'meredith@plenna.mx','medicinageneral'),
 ('Gregory', 'House','Insurgentes #17', '9786543521',false,42,'gregory@plenna.mx','dogcat97');
 
+update m.contra from medico m where m.id_medico = 2;
+
+UPDATE medico
+SET contra='prueba1' WHERE contra='dogcat97';
+
+select * from medico;
 
 insert into paciente  
 (nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
@@ -322,13 +328,29 @@ values
 ('Carolina Ramirez', 19, 'secretaria','Mujer','Femenino','No','Ninguno'),
 ('Paola Sanchez', 16, 'estudiante','Mujer','Femenino','Sí','Aspirina');
 
+insert into paciente  
+(nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
+values
+('Juan Pablo Hermes', 23, 'actuario','Hombre','Masculino','Sí','Citalopram'),
+('Lorenza Jimenez', 18,'estudiante','Mujer','Femenino','Sí','Paracetamol'),
+('Silvia Gonzalez', 35, 'camionera','Mujer','Femenino','No','Ninguno'),
+('Jonathan Carranza', 39, 'ingeniero','Hombre','Masculino','Sí','Diclofenaco'),
+('Mayte Villalaz', 39, 'computologa','Mujer','Femenino','Sí','Genoprazol'),
+('Fernanda Villapaldo', 16, 'estudiante','Mujer','Femenino','Sí','Paracetamol');
+
+select * from paciente;
 
 insert into paciente_medico
 (id_paciente,id_medico)
 values 
-(1,2),
-(2,2),
-(3,2);
+(4,1),
+(6,2),
+(7,2),
+(8,2),
+(9,2),
+(10,2);
+
+select * from paciente_medico pm where id_medico = 2;
 
 insert into especialidad 
 (nombre)
@@ -347,4 +369,127 @@ values
 insert into sueno 
 (horas_sueno,ronca,pararce_noche,pesadillas,id_paciente)
 values 
-(8,'Sí','Frecuentemente','No',4);
+(8,'Sí','Frecuentemente','No',3);
+
+insert into ginecologia  
+(primera_menstruacion,ultima_menstruacion,inicio_vida_sexual,id_paciente)
+values 
+('De los 10 anos a los 14 anos','2008-12-31',14,3);
+
+select * from ginecologia;
+
+
+insert into notas_nutricion 
+(id_paciente,id_medico,hecha_por,insight,vigente)
+values 
+(3,2,'Gregory House','El paciente presenta mejoria con su dieta',true);
+
+select * from notas_nutricion;
+
+insert into notas_generales 
+(id_medico,id_paciente,hecha_por,insight,vigente)
+values 
+(2,3,'Gregory House','El paciente ya no asistira a sus citas',true);
+
+select * from sueno;
+select * from paciente;
+
+insert into enfermedad
+(nombre)
+values 
+('Diabetes'),
+('Pulmonia'),
+('Fibromialgia');
+
+select * from enfermedad;
+
+insert into paciente_enfermedad 
+(id_paciente,id_enfermedad)
+values 
+(3,1),
+(3,3);
+
+select e.nombre from paciente p inner join paciente_enfermedad using(id_paciente) inner join enfermedad e using(id_enfermedad)
+where p.nombre = 'Mau Nieto';
+
+select * from paciente;
+
+insert into anticonceptivos 
+(nombre)
+values
+('Condón'),
+('Sistema de larga duración hormonal (Mirena o Kyleena)'),
+('DIU de cobre o DIU de plata'),
+('Implante subdérmico'),
+('Anticonceptivos orales combinados'),
+('Anillo vaginal'),
+('Parche'),
+('Inyección'),
+('Ciclo natural'),
+('Espermicidas (lámina, esponja, gel)'),
+('Coitus interruptus / método del retiro / método de la marcha atrás'),
+('Ligación o corte de trompas uterinas'),
+('Vasectomía'),
+('Ninguno');
+
+select * from ginecologia;
+
+insert into ginecologia_anticonceptivos 
+(id_ginecologia,id_anticonceptivos)
+values
+(1,1),
+(1,2),
+(1,4),
+(1,5);
+
+select * from ginecologia g inner join ginecologia_anticonceptivos ga using(id_ginecologia) inner join anticonceptivos a using(id_anticonceptivos);
+
+CREATE TABLE nutricion (
+  id_nutricion numeric(4,0) constraint pk_nutricion primary key,
+  peso numeric(5,2) not null,
+  talla numeric(3,1) not null,
+  litros_diarios numeric (4,2) not null,
+  ejercicio afirNeg not null,
+  dias_semanales_actividad_fisica numeric(1) not null,
+  id_paciente numeric(4) references paciente (id_paciente)
+);
+CREATE SEQUENCE nutricion_id_nutricion_seq START 1 INCREMENT 1 ;
+ALTER TABLE nutricion ALTER COLUMN id_nutricion SET DEFAULT nextval('nutricion_id_nutricion_seq');
+
+CREATE TABLE ejercicio (
+  id_ejercicio numeric(2,0) constraint pk_ejercicio primary key,
+  nombre varchar(100) not null
+);
+CREATE SEQUENCE ejercicio_id_ejercicio_seq START 1 INCREMENT 1;
+ALTER TABLE ejercicio ALTER COLUMN id_ejercicio SET DEFAULT nextval('ejercicio_id_ejercicio_seq');
+
+CREATE TABLE nutricion_ejercicio (
+  id_nutricion numeric(4) references nutricion (id_nutricion) ON UPDATE CASCADE ON DELETE CASCADE,
+  id_ejercicio numeric(4) references ejercicio (id_ejercicio) ON UPDATE cascade,
+  constraint pk_nutricion_ejercicio primary key (id_nutricion, id_ejercicio)
+);
+
+insert into Nutricion
+(peso,talla,litros_diarios,ejercicio,dias_semanales_actividad_fisica,id_paciente)
+values 
+(64.24,32,5,'Sí',4,3);
+
+insert into ejercicio 
+(nombre)
+values 
+('Caminar'),
+('Eliptica'),
+('Bicicleta estatica'),
+('Pesas o ejercicios de fuerza'),
+('Yoga'),
+('Actvidades al aire libre'),
+('Otro');
+
+insert into nutricion_ejercicio
+(id_nutricion,id_ejercicio)
+values
+(1,1),
+(1,4);
+
+select e.nombre from nutricion n inner join nutricion_ejercicio ne using(id_nutricion) inner join ejercicio e using(id_ejercicio) where n.id_paciente = 3;
+
