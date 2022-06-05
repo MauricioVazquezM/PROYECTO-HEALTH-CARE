@@ -295,7 +295,6 @@ create table notas_sueno (
 CREATE SEQUENCE notas_sueno_id_notas_sueno_seq START 1 INCREMENT 1;
 ALTER TABLE notas_sueno ALTER COLUMN id_notas_sueno SET DEFAULT nextval('notas_sueno_id_notas_sueno_seq');
 
-
 create table permisos_sueno (
 	id_permisos_sueno numeric (4) constraint pk_permisos_sueno primary key,
 	id_paciente numeric(4) references paciente (id_paciente),
@@ -306,51 +305,28 @@ create table permisos_sueno (
 CREATE SEQUENCE permisos_sueno_id_permisos_sueno_seq START 1 INCREMENT 1;
 ALTER TABLE permisos_sueno ALTER COLUMN id_permisos_sueno SET DEFAULT nextval('permisos_sueno_id_permisos_sueno_seq');
 
-
 insert into medico  
 (nombre, apellido, direccion, numero, posicion ,edad, correo,contra)
 values
 ('Meredith','Grey','Reforma #23', '2378564352',true,34,'meredith@plenna.mx','medicinageneral'),
 ('Gregory', 'House','Insurgentes #17', '9786543521',false,42,'gregory@plenna.mx','dogcat97');
 
-update m.contra from medico m where m.id_medico = 2;
-
-UPDATE medico
-SET contra='prueba1' WHERE contra='dogcat97';
-
-select * from medico;
 
 insert into paciente  
 (nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
 values
 ('Julian Gutierrez', 24, 'albanil','Hombre','Masculino','No','Ninguno'),
 ('Mau Nieto', 21, 'futbolista','Hombre','Masculino','Sí','Paracetamol'),
-('Carolina Ramirez', 19, 'secretaria','Mujer','Femenino','No','Ninguno'),
-('Paola Sanchez', 16, 'estudiante','Mujer','Femenino','Sí','Aspirina');
+('Carolina Ramirez', 19, 'secretaria','Mujer','Femenino','No','Ninguno');
 
-insert into paciente  
-(nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
-values
-('Juan Pablo Hermes', 23, 'actuario','Hombre','Masculino','Sí','Citalopram'),
-('Lorenza Jimenez', 18,'estudiante','Mujer','Femenino','Sí','Paracetamol'),
-('Silvia Gonzalez', 35, 'camionera','Mujer','Femenino','No','Ninguno'),
-('Jonathan Carranza', 39, 'ingeniero','Hombre','Masculino','Sí','Diclofenaco'),
-('Mayte Villalaz', 39, 'computologa','Mujer','Femenino','Sí','Genoprazol'),
-('Fernanda Villapaldo', 16, 'estudiante','Mujer','Femenino','Sí','Paracetamol');
-
-select * from paciente;
+select * from paciente p;
 
 insert into paciente_medico
 (id_paciente,id_medico)
 values 
-(4,1),
-(6,2),
-(7,2),
-(8,2),
-(9,2),
-(10,2);
-
-select * from paciente_medico pm where id_medico = 2;
+(1,2),
+(2,2),
+(3,2);
 
 insert into especialidad 
 (nombre)
@@ -366,53 +342,230 @@ insert into medico_especialidad
 values 
 (2,4);
 
+insert into medico  
+(nombre, apellido, direccion, numero, posicion ,edad, correo,contra)
+values
+('Romeo','Ramirez','Rio Hondo 24','3333317989',false,54,'romeo@plenna.mx','123456'),
+('Kiko','Osorio','Rio Xhico 23','3312345678',false,40,'kiko@plenna.mx','13456'),
+('Ernesto','Zereno','Rio azul 13','3332456777',false,39,'ernesto@plenna.mx','3456'),
+('David','Macareni','Rio tinto 45','3323234323',false,54,'david@plenna.mx','1235'),
+('Tonio','Dominguez','Rio Reforma','3334343433',false,29,'tonio@plenna.mx','128856'),
+('Romulo','De Ramoos','Girasol 34','3321212323',false,36,'romulo@plenna.mx','12856'),
+('Alfaro','SotoMayor','Chihuahua 89','5224989234',false,45,'alfaro@plenna.mx','1342346');
+
+insert into paciente  
+(nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
+values
+('Juan Pablo Carrillo', 23, 'abogado','Hombre','Masculino','No','Ninguno'),
+('Laura Labastida', 22,'actriz','Mujer','Femenino','Sí','Paracetamol'),
+('Silvia Corona', 21, 'maestra','Mujer','Femenino','No','Ninguno');
+
+
 insert into sueno 
 (horas_sueno,ronca,pararce_noche,pesadillas,id_paciente)
 values 
-(8,'Sí','Frecuentemente','No',3);
+(8,'Sí','Frecuentemente','No',4);
 
-insert into ginecologia  
-(primera_menstruacion,ultima_menstruacion,inicio_vida_sexual,id_paciente)
+
+
+
+
+select * from medico m;
+select * from especialidad e;
+
+insert into medico_especialidad 
+(id_medico,id_especialidad)
+values
+(3,5),
+(4,1),
+(5,2),
+(6,3),
+(7,4),
+(8,5),
+(9,1),
+(1,2);
+
+
+select * from permisos_Nutricion;
+insert into paciente  
+(nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
+values
+('Juan Pablo Hermes', 23, 'actuario','Hombre','Masculino','Sí','Citalopram'),
+('Lorenza Jimenez', 18,'estudiante','Mujer','Femenino','Sí','Paracetamol'),
+('Silvia Gonzalez', 35, 'camionera','Mujer','Femenino','No','Ninguno'),
+('Jonathan Carranza', 39, 'ingeniero','Hombre','Masculino','Sí','Diclofenaco'),
+('Mayte Villalaz', 39, 'computologa','Mujer','Femenino','Sí','Genoprazol'),
+('Fernanda Villapaldo', 16, 'estudiante','Mujer','Femenino','Sí','Paracetamol');
+
+insert into paciente_medico
+(id_paciente,id_medico)
 values 
-('De los 10 anos a los 14 anos','2008-12-31',14,3);
+(4,1),
+(5,2),
+(6,3),
+(7,4),
+(8,5),
+(9,6),
+(10,7),
+(11,8),
+(12,9),
+(3,1),
+(4,2),
+(5,3),
+(9,4),
+(1,5),
+(2,6),
+(3,7),
+(4,8),
+(5,9),
+(6,1);
 
-select * from ginecologia;
+select * from medico pm;
 
-
-insert into notas_nutricion 
-(id_paciente,id_medico,hecha_por,insight,vigente)
+---create type frec as enum('Siempre','Pocas veces','Frecuentemente','Nunca');
+insert into sueno 
+(horas_sueno,ronca,pararce_noche,pesadillas,id_paciente)
 values 
-(3,2,'Gregory House','El paciente presenta mejoria con su dieta',true);
+(8,'Sí','Frecuentemente','No',1),
+(7,'No','Siempre','No',2),
+(6,'No','Frecuentemente','No',3),
+(5,'No','Pocas veces','No',5),
+(8,'Sí','Nunca','No',6),
+(7,'Sí','Nunca','No',7),
+(6,'Sí','Frecuentemente','No',8),
+(5,'No','Pocas veces','No',9),
+(4,'Sí','Frecuentemente','No',10),
+(7,'No','Pocas veces','No',11),
+(5,'Sí','Frecuentemente','No',12);
 
-select * from notas_nutricion;
+select * from sueno s;
 
-insert into notas_generales 
-(id_medico,id_paciente,hecha_por,insight,vigente)
+
+---create type frecuen as enum('Siempre','En determinada circunstancia','Otro');
+insert into sexologia 
+(dificultad_orgasmo,frecuencia,conformidad_vida_sexual,satisfecho,id_paciente)
+values
+('Sí','Siempre','Sí','Sí',1),
+('No','En determinada circunstancia','No','No',2),
+('Sí','Siempre','No','Sí',3),
+('No','En determinada circunstancia','Sí','No',4),
+('Sí','Siempre','No','Sí',5),
+('No','Otro','Sí','No',6),
+('Sí','Siempre','No','Sí',7),
+('No','En determinada circunstancia','Sí','No',8),
+('Sí','Otro','No','Sí',9),
+('No','Siempre','Sí','No',10),
+('Sí','Siempre','No','Sí',11),
+('Sí','En determinada circunstancia','No','No',12);
+
+select * from sexologia s;
+
+
+--create type tiempo_preo as enum('Hace más de un mes','Hace más de 2 semanas','Hace menos de 2 semanas');
+--create type frec as enum('Siempre','Pocas veces','Frecuentemente','Nunca');
+
+insert into psicologia 
+(preocupaciones,tiempo_preocupaciones,agotamiento_emocional,afecta_la_vida,id_paciente)
 values 
-(2,3,'Gregory House','El paciente ya no asistira a sus citas',true);
+('violencia familiar','Hace más de 2 semanas','Pocas veces','Sí',1),
+('violencia social','Hace menos de 2 semanas','Siempre','No',2),
+('hambre mundial','Hace más de un mes','Frecuentemente','Sí',3),
+('contaminacion','Hace menos de 2 semanas','Nunca','No',4),
+('violencia familiar','Hace más de un mes','Siempre','Sí',5),
+('violacion','Hace más de un mes','Siempre','No',6),
+('violencia familiar','Hace menos de 2 semanas','Frecuentemente','No',7),
+('persecusion politica','Hace más de un mes','Siempre','Sí',8),
+('contaminacion','Hace más de un mes','Siempre','Sí',9),
+('violencia familiar','Hace más de 2 semanas','Frecuentemente','No',10),
+('insuficiencia economica','Hace más de un mes','Siempre','Sí',11),
+('violencia familiar','Hace más de 2 semanas','Frecuentemente','No',12);
 
-select * from sueno;
-select * from paciente;
+select * from psicologia p;
 
-insert into enfermedad
+insert into enfermedad 
 (nombre)
 values 
-('Diabetes'),
-('Pulmonia'),
-('Fibromialgia');
+('Gastroenteritis'),
+('Depresion'),
+('Clamidia'),
+('Influenza'),
+('Obesidad'),
+('VIH'),
+('Bipolaridad'),
+('Alzheimer'),
+('Mal de Parkinson'),
+('Estres postraumatico'),
+('Hipertiroidismo');
 
-select * from enfermedad;
-
+select * from enfermedad e;
 insert into paciente_enfermedad 
-(id_paciente,id_enfermedad)
+(id_paciente, id_enfermedad)
 values 
-(3,1),
-(3,3);
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6),
+(7,7),
+(8,8),
+(9,9),
+(10,11),
+(11,10),
+(12,1),
+(5,6),
+(7,9),
+(9,8);
 
-select e.nombre from paciente p inner join paciente_enfermedad using(id_paciente) inner join enfermedad e using(id_enfermedad)
-where p.nombre = 'Mau Nieto';
+select * from paciente_enfermedad pe;
 
-select * from paciente;
+insert into ejercicio 
+(nombre)
+values 
+('Caminar'),
+('Eliptica'),
+('Bicicleta estatica'),
+('Pesas o ejercicios de fuerza'),
+('Yoga'),
+('Actvidades al aire libre'),
+('Otro');
+
+insert into nutricion 
+(peso,talla,litros_diarios,ejercicio,dias_semanales_actividad_fisica,id_paciente)
+values 
+(122.5,1.9,2.5,'Sí',4,1),
+(56.7,1.6,3.5,'Sí',5,2),
+(80,1.7,3.5,'Sí',6,3),
+(99,1.9,1.5,'No',0,4),
+(80,1.7,3,'No',0,5),
+(78.9,1.6,2.5,'Sí',6,6),
+(72.5,1.7,2.5,'Sí',4,7),
+(82.5,1.8,3.5,'Sí',3,8),
+(62.5,1.6,2.5,'Sí',4,9),
+(42.5,1.5,3.5,'Sí',4,10),
+(67,1.6,1.5,'Sí',2,11),
+(122.5,1.8,2.5,'Sí',7,12);
+
+select * from nutricion n;
+
+insert into nutricion_ejercicio 
+(id_nutricion,id_ejercicio)
+values 
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6),
+(7,7),
+(8,1),
+(9,2),
+(10,3),
+(11,4),
+(12,5),
+(8,6),
+(9,7),
+(6,1);
 
 insert into anticonceptivos 
 (nombre)
@@ -432,64 +585,92 @@ values
 ('Vasectomía'),
 ('Ninguno');
 
-select * from ginecologia;
+insert into ginecologia 
+(primera_menstruacion,ultima_menstruacion,inicio_vida_sexual ,id_paciente)
+values
+('Después de los 14 anos','2008-06-15','12',1),
+('Antes de los 10 anos','2008-08-15','11',2),
+('De los 10 anos a los 14 anos','2008-09-15','12',3),
+('Antes de los 10 anos','2008-10-15','11',4),
+('De los 10 anos a los 14 anos','2008-11-15','10',5),
+('Antes de los 10 anos','2008-12-15','10',6),
+('Después de los 14 anos','2008-11-15','12',7),
+('Antes de los 10 anos','2008-12-15','11',8),
+('Después de los 14 anos','2008-11-15','13',9),
+('De los 10 anos a los 14 anos','2008-10-15','11',10),
+('Después de los 14 anos','2008-11-15','12',11),
+('Antes de los 10 anos','2008-11-15','12',12);
 
+select * from anticonceptivos a;
 insert into ginecologia_anticonceptivos 
 (id_ginecologia,id_anticonceptivos)
 values
 (1,1),
-(1,2),
-(1,4),
-(1,5);
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6),
+(7,7),
+(8,8),
+(9,9),
+(10,10),
+(11,11),
+(12,12),
+(11,13),
+(8,14),
+(9,1),
+(3,2);
 
-select * from ginecologia g inner join ginecologia_anticonceptivos ga using(id_ginecologia) inner join anticonceptivos a using(id_anticonceptivos);
+select * from especialidad me; 
 
-CREATE TABLE nutricion (
-  id_nutricion numeric(4,0) constraint pk_nutricion primary key,
-  peso numeric(5,2) not null,
-  talla numeric(3,1) not null,
-  litros_diarios numeric (4,2) not null,
-  ejercicio afirNeg not null,
-  dias_semanales_actividad_fisica numeric(1) not null,
-  id_paciente numeric(4) references paciente (id_paciente)
-);
-CREATE SEQUENCE nutricion_id_nutricion_seq START 1 INCREMENT 1 ;
-ALTER TABLE nutricion ALTER COLUMN id_nutricion SET DEFAULT nextval('nutricion_id_nutricion_seq');
+select * from medico_especialidad;
 
-CREATE TABLE ejercicio (
-  id_ejercicio numeric(2,0) constraint pk_ejercicio primary key,
-  nombre varchar(100) not null
-);
-CREATE SEQUENCE ejercicio_id_ejercicio_seq START 1 INCREMENT 1;
-ALTER TABLE ejercicio ALTER COLUMN id_ejercicio SET DEFAULT nextval('ejercicio_id_ejercicio_seq');
-
-CREATE TABLE nutricion_ejercicio (
-  id_nutricion numeric(4) references nutricion (id_nutricion) ON UPDATE CASCADE ON DELETE CASCADE,
-  id_ejercicio numeric(4) references ejercicio (id_ejercicio) ON UPDATE cascade,
-  constraint pk_nutricion_ejercicio primary key (id_nutricion, id_ejercicio)
-);
-
-insert into Nutricion
-(peso,talla,litros_diarios,ejercicio,dias_semanales_actividad_fisica,id_paciente)
-values 
-(64.24,32,5,'Sí',4,3);
-
-insert into ejercicio 
-(nombre)
-values 
-('Caminar'),
-('Eliptica'),
-('Bicicleta estatica'),
-('Pesas o ejercicios de fuerza'),
-('Yoga'),
-('Actvidades al aire libre'),
-('Otro');
-
-insert into nutricion_ejercicio
-(id_nutricion,id_ejercicio)
+insert into permisos_nutricion 
+(id_paciente,id_medico,permiso)
 values
-(1,1),
-(1,4);
+(1,2,true),
+(2,2,true),
+(3,2,true),
+(5,2,true),
+(10,7,true),
+(4,2,true),
+(3,7,true);
 
-select e.nombre from nutricion n inner join nutricion_ejercicio ne using(id_nutricion) inner join ejercicio e using(id_ejercicio) where n.id_paciente = 3;
+insert into permisos_ginecologia  
+(id_paciente,id_medico,permiso)
+values
+(7,4,true),
+(12,4,true),
+(9,4,true),
+(5,9,true);
+
+insert into permisos_psicologia  
+(id_paciente,id_medico,permiso)
+values
+(9,6,true),
+(2,6,true);
+
+insert into permisos_sexualidad  
+(id_paciente,id_medico,permiso)
+values
+(8,5,true),
+(3,1,true),
+(1,5,true),
+(4,1,true),
+(6,1,true);
+
+insert into permisos_sueno 
+(id_paciente,id_medico,permiso)
+values
+(6,3,true),
+(11,8,true),
+(5,3,true),
+(4,8,true);
+
+select * from permisos_sueno ps;
+
+select * from paciente_medico pm;
+
+select * from paciente;
 
