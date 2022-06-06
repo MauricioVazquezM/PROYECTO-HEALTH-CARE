@@ -1,13 +1,1 @@
-1. LOG IN
-  En nuestra base de datos podemos apreciar la tabla medico, en la cual se encuentran los correos y las contraseñas de los medicos. De igual manera, se puede apreciar el
-  campo posciocion la cual nos dira si es o no la medico general y dependiendod de esto guiara al usuario a una pestaña personalzada con funcionalidad diferente. 
-  Con estos elementos de la tabla se hace el log in. Especificamente, mediante un query, que se puede apreciar en el codigo fuente, se atraen estso datos para ser 
-  utilizados. De igual manera, se tiene la funcionalidad, al entrar en la pestaña de inico de cada medico, de poder cambiar sus contraseñas si hace se desea.
 
-2. PESTAÑA PERSONALIZADAS
-  2.1 PESTAÑA MEDICO GENERAL
-    
-  2.2 PESTAÑA ESPECIALIDAD
- 
- 
-3. ANALISIS GRAFICO
