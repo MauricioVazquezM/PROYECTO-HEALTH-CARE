@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="Updates" Height="450" Width="800">
     <Grid>
-        <Label x:Name="paciente" Content="Label" HorizontalAlignment="Left" Margin="51,174,0,0" VerticalAlignment="Top" Height="98" Width="541" FontSize="50"/>
+        <Label x:Name="paciente" Content="Label" HorizontalAlignment="Left" Margin="464,78,0,0" VerticalAlignment="Top" Height="60" Width="234" FontSize="23" FontFamily="Agency FB"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="686,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="686,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2"/>
+        <Image HorizontalAlignment="Left" Height="47" Margin="18,22,0,0" VerticalAlignment="Top" Width="475" Source="/Image1.png"/>
+        <Button Content="Realizar cambio" HorizontalAlignment="Left" Margin="524,311,0,0" VerticalAlignment="Top" Height="31" Width="204" Click="Button_Click"/>
+        <Label Content="Sus diagnósticos hasta el momento de él/la paciente:" HorizontalAlignment="Left" Margin="28,76,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="25"/>
+        <DataGrid x:Name = "info" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,138,313,36"/>
+        <Label Content="Registro que desea modificar:" HorizontalAlignment="Left" Margin="512,137,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <TextBox x:Name ="registro" HorizontalAlignment="Left" Margin="524,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" Height="37" RenderTransformOrigin="0.501,0.392"/>
+        <TextBox x:Name="diagnostico" HorizontalAlignment="Left" Margin="524,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontFamily="Agency FB" FontSize="23" Height="31"/>
+        <Label x:Name="cambio" Content="Nuevo diagnóstico:" HorizontalAlignment="Left" Margin="553,227,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <Button x:Name="vigencia" Content="Cambiar vigencia" HorizontalAlignment="Left" Margin="524,359,0,0" VerticalAlignment="Top" Height="27" Width="204" Click="vigencia_Click"/>
 
     </Grid>
 </Window>

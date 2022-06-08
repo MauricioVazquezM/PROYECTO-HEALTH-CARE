@@ -27,5 +27,6 @@
         <Label x:Name="extra" Content="" HorizontalAlignment="Left" Margin="307,260,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23" FontWeight="Bold" Width="143" Grid.Column="1"/>
         <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="410,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1" Grid.Column="1"/>
         <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="410,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2" Grid.Column="1"/>
+        <Label x:Name="info" Content="" HorizontalAlignment="Left" Margin="246,53,0,0" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2" Height="33" FontFamily="Agency FB" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
     </Grid>
 </Window>

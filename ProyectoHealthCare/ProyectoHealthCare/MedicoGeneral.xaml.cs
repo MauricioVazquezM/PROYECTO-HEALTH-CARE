@@ -23,6 +23,7 @@ namespace ProyectoHealthCare
         public MedicoGeneral()
         {
             InitializeComponent();
+            cj.Navigate(new Uri("http://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg")); 
             Clases.CConexion.llenarComboPacientesGen(pacientes);
 
             String correo = Application.Current.Properties["correo"].ToString();
@@ -34,13 +35,43 @@ namespace ProyectoHealthCare
             while (rd.Read())
                 {
                 nombre.Content = rd.GetString(0);
-            }
+                 }
              rd.Close();
              con.Close();
             
         }
 
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow MiVentana = new MainWindow();
+            Application.Current.Properties.Remove("correo");
+            Application.Current.Properties.Remove("paciente");
+            Application.Current.Properties.Remove("medico");
+            Application.Current.Properties.Remove("especialidad");
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Configuracion MiVentana = new Configuracion();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
         private void acceso_Click(object sender, RoutedEventArgs e)
+        {
+            Permisos MiVentana = new Permisos();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             String paciente = pacientes.Text;
             Application.Current.Properties["paciente"] = paciente;
@@ -50,19 +81,45 @@ namespace ProyectoHealthCare
             this.Hide();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow MiVentana = new MainWindow();
-            Application.Current.Properties.Remove("correo");
-            Application.Current.Properties.Remove("paciente");
+            String paciente = pacientes.Text;
+            Application.Current.Properties["paciente"] = paciente;
+            Application.Current.Properties["especialidad"] = especialidad.Content;
+            Application.Current.Properties["medico"] = nombre.Content;
+            Updates MiVentana = new Updates();
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void nuevas_notas_Click(object sender, RoutedEventArgs e)
         {
-            Configuracion MiVentana = new Configuracion();
+            Application.Current.Properties["paciente"] = pacientes.Text;
+            Application.Current.Properties["especialidad"] = especialidad.Content;
+            Application.Current.Properties["medico"] = nombre.Content;
+
+            Insights MiVentana = new Insights();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void notas_Click(object sender, RoutedEventArgs e)
+        {
+            String paciente = pacientes.Text;
+            Application.Current.Properties["paciente"] = paciente;
+            Notas MiVentana = new Notas();
+            MiVentana.Owner = this;
+            MiVentana.Show();
+            this.Hide();
+        }
+
+        private void notasGenerales_Click(object sender, RoutedEventArgs e)
+        {
+            String paciente = pacientes.Text;
+            Application.Current.Properties["paciente"] = paciente;
+            NotasGenerales MiVentana = new NotasGenerales();
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();

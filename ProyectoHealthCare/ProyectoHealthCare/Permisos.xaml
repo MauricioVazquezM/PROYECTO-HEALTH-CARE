@@ -8,15 +8,19 @@
         Title="Permisos" Height="450" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Height="69" Margin="58,105,0,0" TextWrapping="Wrap" Text="PERMISOS" VerticalAlignment="Top" Width="385" FontWeight="Bold" FontSize="36"/>
-        <ComboBox x:Name="pacientesNom" HorizontalAlignment="Left" Height="23" Margin="526,179,0,0" VerticalAlignment="Top" Width="150"/>
-        <RadioButton Content="Dar" HorizontalAlignment="Left" Height="17" Margin="199,310,0,0" VerticalAlignment="Top" Width="90"/>
-        <RadioButton Content="Negar" HorizontalAlignment="Left" Height="17" Margin="199,332,0,0" VerticalAlignment="Top" Width="90"/>
-        <Button x:Name="aplicar" Content="Aplicar" HorizontalAlignment="Left" Height="27" Margin="601,362,0,0" VerticalAlignment="Top" Width="159"/>
-        <ComboBox x:Name="nomDoctor" HorizontalAlignment="Left" Height="23" Margin="199,179,0,0" VerticalAlignment="Top" Width="165"/>
+        <ComboBox x:Name="pacientesNom" HorizontalAlignment="Left" Height="31" Margin="568,179,0,0" VerticalAlignment="Top" Width="192"/>
+        <RadioButton x:Name="dar" Content="Dar" HorizontalAlignment="Left" Height="23" Margin="199,300,0,0" VerticalAlignment="Top" Width="155" FontFamily="Agency FB" FontSize="23"/>
+        <RadioButton x:Name="quitar" Content="Negar" HorizontalAlignment="Left" Height="31" Margin="199,332,0,0" VerticalAlignment="Top" Width="90" FontFamily="Agency FB" FontSize="23"/>
+        <Button x:Name="aplicar" Content="Aplicar" HorizontalAlignment="Left" Height="27" Margin="601,362,0,0" VerticalAlignment="Top" Width="159" Click="aplicar_Click"/>
+        <ComboBox x:Name="nomDoctor" HorizontalAlignment="Left" Height="31" Margin="199,179,0,0" VerticalAlignment="Top" Width="201"/>
         <Image HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" VerticalAlignment="Top" Width="184" Source="/Image1.png"/>
-        <Label Content="Nombre Doctor:" HorizontalAlignment="Left" Height="23" Margin="102,179,0,0" VerticalAlignment="Top" Width="126"/>
-        <Label Content="Nombre Paciente:" HorizontalAlignment="Left" Height="23" Margin="425,179,0,0" VerticalAlignment="Top" Width="126"/>
-        <Label Content="Estatus:" HorizontalAlignment="Left" Height="30" Margin="134,304,0,0" VerticalAlignment="Top" Width="65"/>
+        <Label Content="Nombre Doctor:" HorizontalAlignment="Left" Height="38" Margin="58,172,0,0" VerticalAlignment="Top" Width="151" FontFamily="Agency FB" FontSize="23"/>
+        <Label Content="Nombre Paciente:" HorizontalAlignment="Left" Height="38" Margin="425,176,0,0" VerticalAlignment="Top" Width="138" FontFamily="Agency FB" FontSize="23"/>
+        <Label Content="Estatus:" HorizontalAlignment="Left" Height="36" Margin="114,300,0,0" VerticalAlignment="Top" Width="65" FontFamily="Agency FB" FontSize="23"/>
+        <Label Content="Especialidad a la que desea dar/quitar permiso:" HorizontalAlignment="Left" Height="38" Margin="114,234,0,0" VerticalAlignment="Top" Width="361" FontFamily="Agency FB" FontSize="23"/>
+        <ComboBox x:Name="especialidad" HorizontalAlignment="Left" Margin="480,239,0,0" VerticalAlignment="Top" Width="231" Height="33"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="686,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="686,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

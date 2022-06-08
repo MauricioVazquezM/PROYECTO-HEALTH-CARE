@@ -11,6 +11,16 @@
             <ColumnDefinition Width="9*"/>
             <ColumnDefinition Width="151*"/>
         </Grid.ColumnDefinitions>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="641,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1" Grid.Column="1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="641,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2" Grid.Column="1"/>
+        <Label Grid.Column="1" Content="Hacer nota de consulta de el/la paciente:" HorizontalAlignment="Left" Margin="0,74,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="185" Source="/Image1.png" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="pacientes" Grid.Column="1" HorizontalAlignment="Left" Margin="325,74,0,0" VerticalAlignment="Top" Width="170" Height="35"/>
+        <Label Grid.Column="1" Content="Nuevo diagnóstico" HorizontalAlignment="Left" Margin="0,158,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <TextBox x:Name="diagnostico" Grid.Column="1" HorizontalAlignment="Left" Margin="155,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="570" FontFamily="Agency FB" FontSize="20" Height="82"/>
+        <Label Grid.Column="1" Content="Fecha en que se diagnostica (YYYY-MM-DD)" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <TextBox x:Name ="fecha" Grid.Column="1" HorizontalAlignment="Left" Margin="355,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" Height="37" FontSize="20"/>
+        <Button x:Name="realizar" Grid.Column="1" Content="FINALIZAR NOTA" HorizontalAlignment="Center" Margin="0,358,0,0" VerticalAlignment="Top" Height="36" Width="131" Click="realizar_Click"/>
 
     </Grid>
 </Window>

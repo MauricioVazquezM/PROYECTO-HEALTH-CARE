@@ -81,7 +81,7 @@ namespace ProyectoHealthCare
                             "ga using(id_ginecologia) inner join anticonceptivos a using(id_anticonceptivos) where id_paciente = {0}", idp), con1);
                         rd2 = cmd2.ExecuteReader();
                         apoyo.ItemsSource = rd2;
-                        extra.Content = "anticonceptivos";
+                        extra.Content = "Anticonceptivos";
                     }
                     else
                     {
@@ -89,7 +89,7 @@ namespace ProyectoHealthCare
                             "inner join ejercicio e using (id_ejercicio) where n.id_paciente = {0}", idp), con1);
                         rd2 = cmd2.ExecuteReader();
                         apoyo.ItemsSource = rd2;
-                        extra.Content = "ejercicio";
+                        extra.Content = "Ejercicio";
                     }
 
                 }
@@ -107,6 +107,7 @@ namespace ProyectoHealthCare
                 MessageBox.Show("Error");
             }
             Clases.CConexion.DatosPacientes(grid,esp,idp);
+            info.Content = "Información actualizada";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -114,6 +115,8 @@ namespace ProyectoHealthCare
             MainWindow MiVentana = new MainWindow();
             Application.Current.Properties.Remove("correo");
             Application.Current.Properties.Remove("paciente");
+            Application.Current.Properties.Remove("medico");
+            Application.Current.Properties.Remove("especialidad");
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();

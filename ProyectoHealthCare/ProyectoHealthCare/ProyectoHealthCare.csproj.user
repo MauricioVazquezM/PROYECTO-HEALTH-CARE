@@ -25,6 +25,9 @@
     <Compile Update="Notas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="NotasGenerales.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Permisos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Notas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NotasGenerales.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Permisos.xaml">

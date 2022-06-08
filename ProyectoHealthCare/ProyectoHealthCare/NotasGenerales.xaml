@@ -1,0 +1,22 @@
+﻿<Window x:Class="ProyectoHealthCare.NotasGenerales"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoHealthCare"
+        mc:Ignorable="d"
+        Title="NotasGenerales" Height="450" Width="800">
+    <Grid>
+        <Button Content="Salir" HorizontalAlignment="Left" Height="41" Margin="686,25,0,0" VerticalAlignment="Top" Width="84" FontFamily="Agency FB" FontSize="23" Background="#FFE8A99C" Click="Button_Click_1"/>
+        <Button Content="Volver" HorizontalAlignment="Left" Height="40" Margin="686,74,0,0" VerticalAlignment="Top" Width="84" Background="#FFE8A99C" FontFamily="Agency FB" FontSize="23" Click="Button_Click_2"/>
+        <Label Content="Nota de consulta de el/la paciente:" HorizontalAlignment="Left" Margin="45,74,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <Image HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="185" Source="/Image1.png"/>
+        <ComboBox x:Name="pacientes" HorizontalAlignment="Left" Margin="370,74,0,0" VerticalAlignment="Top" Width="170" Height="35"/>
+        <Label Content="Diagnóstico" HorizontalAlignment="Left" Margin="82,158,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <TextBox x:Name="diagnostico" HorizontalAlignment="Left" Margin="200,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="570" FontFamily="Agency FB" FontSize="20" Height="82"/>
+        <Label Content="Fecha en que se diagnostica (YYYY-MM-DD)" HorizontalAlignment="Left" Margin="55,289,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
+        <TextBox x:Name ="fecha" HorizontalAlignment="Left" Margin="400,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" Height="37" FontSize="20"/>
+        <Button x:Name="realizar" Content="FINALIZAR NOTA" HorizontalAlignment="Left" Margin="357,358,0,0" VerticalAlignment="Top" Height="36" Width="131" Click="realizar_Click"/>
+
+    </Grid>
+</Window>

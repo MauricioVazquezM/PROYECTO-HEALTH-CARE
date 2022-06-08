@@ -85,6 +85,8 @@ namespace ProyectoHealthCare
             MainWindow MiVentana = new MainWindow();
             Application.Current.Properties.Remove("correo");
             Application.Current.Properties.Remove("paciente");
+            Application.Current.Properties.Remove("medico");
+            Application.Current.Properties.Remove("especialidad");
             MiVentana.Owner = this;
             MiVentana.Show();
             this.Hide();
