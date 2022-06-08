@@ -14,8 +14,8 @@
         <Image HorizontalAlignment="Left" Height="131" Margin="45,57,0,0" VerticalAlignment="Top" Width="138" Source="/doctoraPlenna.png"/>
         <ComboBox x:Name ="pacientes" HorizontalAlignment="Left" Margin="45,323,0,0" VerticalAlignment="Top" Width="198" Height="34"/>
         <Label Content="Pacientes:" HorizontalAlignment="Left" Margin="34,281,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="720,43,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFC85131" Click="Button_Click_1" FontWeight="Normal" RenderTransformOrigin="0.5,0"/>
-        <Button Content="Configuración" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFE0DCE0" Click="Button_Click_2"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="705,41,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFC85131" Click="Button_Click_1" FontWeight="Normal" RenderTransformOrigin="0.5,0"/>
+        <Button Content="Configuración" HorizontalAlignment="Left" Margin="705,11,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFE0DCE0" Click="Button_Click_2"/>
         <Button Content="BÚSQUEDA INTELIGENTE" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="30" Width="220" Click="Button_Click"/>
         <Button Content="UPDATE" HorizontalAlignment="Left" Margin="552,379,0,0" VerticalAlignment="Top" Width="223" Height="30" Click="Button_Click_3"/>
         <Label x:Name ="especialidad" Content="Sexologia" HorizontalAlignment="Left" Margin="72,244,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
