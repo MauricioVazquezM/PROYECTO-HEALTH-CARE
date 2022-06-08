@@ -27,6 +27,11 @@
         <Button Grid.Column="1" Content="Configuración" HorizontalAlignment="Left" Margin="642,23,0,0" VerticalAlignment="Top" Height="33" Width="83" Background="#FFE0DCE0" Click="Button_Click_2"/>
         <Button Grid.Column="1" Content="Ver notas" HorizontalAlignment="Left" Height="37" Margin="479,303,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="233" FontFamily="Agency FB" FontSize="23" Click="Button_Click_3"/>
         <Button x:Name="nuevas_notas" Content="HACER NUEVAS NOTAS" HorizontalAlignment="Left" Margin="479,66,0,0" VerticalAlignment="Top" Height="30" Width="233" Grid.Column="1" Grid.Row="1" Click="nuevas_notas_Click" FontFamily="Agency FB" FontSize="23"/>
+        <Image x:Name="Nutri1" Grid.Column="1" HorizontalAlignment="Left" Height="136" Margin="129,117,0,0" VerticalAlignment="Top" Width="148" Source="/Nutri2.png" OpacityMask="Black"/>
+        <Image HorizontalAlignment="Left" Height="159" Margin="25,293,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="496" Source="/Nutri3.png" Grid.ColumnSpan="2"/>
+        <Label x:Name="especialidad_Copy" Content="Distribucion por tipo de ejercicio" HorizontalAlignment="Left" Height="24" Margin="0,298,0,0" VerticalAlignment="Top" Width="180" FontSize="10" Grid.Column="1" Grid.RowSpan="2" AutomationProperties.IsColumnHeader="True" FontWeight="Bold" Visibility="Visible" Opacity="0.6"/>
+        <Image Grid.Column="1" HorizontalAlignment="Center" Height="123" Margin="0,125,0,0" VerticalAlignment="Top" Width="198" Source="/Nutri1.png"/>
+        <Label x:Name="especialidad_Copy1" Content="Distribucion estatura" HorizontalAlignment="Left" Height="27" Margin="269,115,0,0" VerticalAlignment="Top" Width="194" FontSize="9" Grid.Column="1" AutomationProperties.IsColumnHeader="True" FontWeight="Bold" Visibility="Visible" Opacity="0.6"/>
 
     </Grid>
 </Window>

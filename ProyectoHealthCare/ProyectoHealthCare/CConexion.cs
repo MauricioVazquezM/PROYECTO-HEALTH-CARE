@@ -28,7 +28,7 @@ namespace ProyectoHealthCare.Clases
             NpgsqlConnection con;
             try
             {
-                con = new NpgsqlConnection("Host=localhost;database=finalizima;user id=postgres;password=mauri245");
+                con = new NpgsqlConnection("Host=plenna.czwerljswhwy.us-east-1.rds.amazonaws.com;database=Plennadb;user id=postgres;password=Mougli1099");
                 con.Open();
             }
             catch (Exception)

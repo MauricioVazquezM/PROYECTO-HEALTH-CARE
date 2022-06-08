@@ -23,7 +23,6 @@ namespace ProyectoHealthCare
         public MedicoGeneral()
         {
             InitializeComponent();
-            cj.Navigate(new Uri("http://localhost:3000")); 
             Clases.CConexion.llenarComboPacientesGen(pacientes);
 
             String correo = Application.Current.Properties["correo"].ToString();

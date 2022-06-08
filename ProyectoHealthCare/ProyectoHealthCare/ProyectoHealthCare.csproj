@@ -13,7 +13,14 @@
     <None Remove="configuracion.png" />
     <None Remove="doctoraP.png" />
     <None Remove="doctoraPlenna.png" />
+    <None Remove="General1.png" />
+    <None Remove="General2.png" />
+    <None Remove="General3.png" />
     <None Remove="Image1.png" />
+    <None Remove="Nutri1.png" />
+    <None Remove="Nutri2.png" />
+    <None Remove="Nutri3.png" />
+    <None Remove="Stats1.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +50,14 @@
     <Resource Include="configuracion.png" />
     <Resource Include="doctoraP.png" />
     <Resource Include="doctoraPlenna.png" />
+    <Resource Include="General1.png" />
+    <Resource Include="General2.png" />
+    <Resource Include="General3.png" />
     <Resource Include="Image1.png" />
+    <Resource Include="Nutri1.png" />
+    <Resource Include="Nutri2.png" />
+    <Resource Include="Nutri3.png" />
+    <Resource Include="Stats1.png" />
   </ItemGroup>
 
 </Project>

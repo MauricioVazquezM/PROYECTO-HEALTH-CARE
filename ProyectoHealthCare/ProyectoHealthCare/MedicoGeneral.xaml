@@ -14,15 +14,17 @@
         <Image HorizontalAlignment="Left" Height="131" Margin="45,57,0,0" VerticalAlignment="Top" Width="138" Source="/doctoraPlenna.png"/>
         <ComboBox x:Name ="pacientes" HorizontalAlignment="Left" Margin="45,323,0,0" VerticalAlignment="Top" Width="198" Height="34"/>
         <Label Content="Pacientes:" HorizontalAlignment="Left" Margin="34,281,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Button Content="Salir" HorizontalAlignment="Left" Margin="692,70,0,0" VerticalAlignment="Top" Height="32" Width="83" Background="#FFC85131" Click="Button_Click_1" FontWeight="Normal" RenderTransformOrigin="0.5,0"/>
-        <Button Content="Configuración" HorizontalAlignment="Left" Margin="692,23,0,0" VerticalAlignment="Top" Height="33" Width="83" Background="#FFE0DCE0" Click="Button_Click_2"/>
+        <Button Content="Salir" HorizontalAlignment="Left" Margin="720,43,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFC85131" Click="Button_Click_1" FontWeight="Normal" RenderTransformOrigin="0.5,0"/>
+        <Button Content="Configuración" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" Height="23" Width="70" Background="#FFE0DCE0" Click="Button_Click_2"/>
         <Button Content="BÚSQUEDA INTELIGENTE" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Height="30" Width="220" Click="Button_Click"/>
         <Button Content="UPDATE" HorizontalAlignment="Left" Margin="552,379,0,0" VerticalAlignment="Top" Width="223" Height="30" Click="Button_Click_3"/>
         <Label x:Name ="especialidad" Content="Sexologia" HorizontalAlignment="Left" Margin="72,244,0,0" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="23"/>
         <Button x:Name="nuevas_notas" Content="HACER NUEVAS NOTAS" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="30" Width="220" Click="nuevas_notas_Click"/>
         <Button x:Name="notas" Content="VER NOTAS ACTUALES" HorizontalAlignment="Left" Margin="552,328,0,0" VerticalAlignment="Top" Width="223" Height="29" Click="notas_Click"/>
         <Button x:Name="notasGenerales" Content="AÑADIR NOTA GENERAL" HorizontalAlignment="Left" Margin="552,283,0,0" VerticalAlignment="Top" Height="23" Width="223" Click="notasGenerales_Click"/>
-        <WebBrowser x:Name= "cj" Margin="200,34,136,167"/>
+        <Image x:Name="General1" HorizontalAlignment="Left" Height="176" Margin="224,86,0,0" VerticalAlignment="Top" Width="186" Source="/General1.png"/>
+        <Image x:Name="Genral2" HorizontalAlignment="Left" Height="185" Margin="410,86,0,0" VerticalAlignment="Top" Width="345" Source="/General3.png"/>
+        <Label x:Name="especialidad_Copy1" Content="Distribucion enfermamdes entre pacientes" HorizontalAlignment="Left" Height="27" Margin="415,86,0,0" VerticalAlignment="Top" Width="194" FontSize="9" AutomationProperties.IsColumnHeader="True" FontWeight="Bold" Visibility="Visible" Opacity="0.6"/>
 
     </Grid>
 </Window>
