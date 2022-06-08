@@ -174,11 +174,12 @@ CREATE TABLE paciente_medico (
 
 create table notas_generales (
 	id_notas_generales numeric (4) constraint pk_notas_generales primary key,
-	id_medico numeric(4) references medico (id_medico),
 	id_paciente numeric(4) references paciente (id_paciente),
+	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_generales_id_notas_generales_seq START 1 INCREMENT 1 ;
@@ -192,7 +193,8 @@ create table notas_nutricion (
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_nutricion_id_notas_nutricion_seq START 1 INCREMENT 1;
@@ -218,7 +220,8 @@ create table notas_psicologia (
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_psicologia_id_notas_psicologia_seq START 1 INCREMENT 1;
@@ -242,7 +245,8 @@ create table notas_sexualidad (
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_sexualidad_id_notas_sexualidad_seq START 1 INCREMENT 1;
@@ -265,7 +269,8 @@ create table notas_ginecologia (
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_ginecologia_id_notas_ginecologia_seq START 1 INCREMENT 1;
@@ -289,7 +294,8 @@ create table notas_sueno (
 	id_medico numeric(4) references medico (id_medico),
 	hecha_por varchar(100) not null,
 	insight varchar(500) not null,
-	vigente bool not null
+	vigente bool not null,
+	fecha date not null
 );
 
 CREATE SEQUENCE notas_sueno_id_notas_sueno_seq START 1 INCREMENT 1;
@@ -386,7 +392,6 @@ values
 (1,2);
 
 
-select * from permisos_Nutricion;
 insert into paciente  
 (nombre, edad, ocupacion, genero, sexo ,medicacion_actual, medicamentos)
 values
@@ -420,7 +425,7 @@ values
 (5,9),
 (6,1);
 
-select * from medico pm;
+
 
 ---create type frec as enum('Siempre','Pocas veces','Frecuentemente','Nunca');
 insert into sueno 
@@ -437,8 +442,6 @@ values
 (4,'Sí','Frecuentemente','No',10),
 (7,'No','Pocas veces','No',11),
 (5,'Sí','Frecuentemente','No',12);
-
-select * from sueno s;
 
 
 ---create type frecuen as enum('Siempre','En determinada circunstancia','Otro');
@@ -457,8 +460,6 @@ values
 ('No','Siempre','Sí','No',10),
 ('Sí','Siempre','No','Sí',11),
 ('Sí','En determinada circunstancia','No','No',12);
-
-select * from sexologia s;
 
 
 --create type tiempo_preo as enum('Hace más de un mes','Hace más de 2 semanas','Hace menos de 2 semanas');
@@ -668,9 +669,74 @@ values
 (5,3,true),
 (4,8,true);
 
-select * from permisos_sueno ps;
-
 select * from paciente_medico pm;
+select * from notas_generales ng;
+select * from notas_nutricion;
+select * from notas_sexualidad ns;
 
-select * from paciente;
+select count(*) from paciente p;
+select count(*) from medico p;
 
+
+---QUERIES GENERALES
+select * from medico m;
+
+select pm.id_medico ,count(*)
+from paciente_medico pm join medico m using(id_medico)
+group by pm.id_medico
+order by pm.id_medico asc;
+
+select e.nombre, count(*) from paciente p inner join paciente_enfermedad pe 
+using (id_paciente) inner join enfermedad e using(id_enfermedad) group by e.nombre;
+
+
+----QUERIES POR RAMAS
+
+--1)SEXOLOGIA
+select * from sexologia s;
+
+select s.conformidad_vida_sexual, count(*)
+from sexologia s
+group by s.conformidad_vida_sexual;
+
+select s.dificultad_orgasmo , count(*)
+from sexologia s
+group by s.dificultad_orgasmo;
+
+select s.frecuencia  , count(*)
+from sexologia s
+group by s.frecuencia;
+
+select s.satisfecho , count(*)
+from sexologia s
+group by s.satisfecho ;
+
+
+--2)GINECOLOGIA
+select * from ginecologia g;
+
+select g.primera_menstruacion, count(*)
+from ginecologia g 
+group by g.primera_menstruacion;
+
+select g.inicio_vida_sexual, count(*) 
+from ginecologia g 
+group by g.inicio_vida_sexual;
+
+select a.nombre, count(*) from ginecologia g inner join ginecologia_anticonceptivos ga using(id_ginecologia) 
+inner join anticonceptivos a using(id_anticonceptivos) group by a.nombre;
+
+
+--3)NUTRICION
+select * from nutricion n;
+
+select n.litros_diarios, count(*)
+from nutricion n 
+group by n.litros_diarios;
+
+select n.ejercicio , count(*)
+from nutricion n 
+group by n.ejercicio;
+
+select e.nombre, count(*) from nutricion inner join nutricion_ejercicio ne using(id_nutricion) 
+inner join ejercicio e using(id_ejercicio) group by e.nombre;
