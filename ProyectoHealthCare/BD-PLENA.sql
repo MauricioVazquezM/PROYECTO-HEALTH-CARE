@@ -680,11 +680,42 @@ select count(*) from medico p;
 
 ---QUERIES GENERALES
 select * from medico m;
+select * from paciente p;
 
 select pm.id_medico ,count(*)
 from paciente_medico pm join medico m using(id_medico)
 group by pm.id_medico
 order by pm.id_medico asc;
+
+select aux.rango_edad, count(*)
+from (select m.edad, case 
+	when m.edad<= 35 then 'menor a 35 anhos'
+	when m.edad > 35 and m.edad<=45  then 'entre 35 y 45 anhos'
+	else 'mayor a 45 anhos'
+	end as rango_edad
+	from medico m) as aux
+group by aux.rango_edad;
+
+select aux.rango_edad, count(*)
+from (select p.edad, case 
+	when p.edad<= 25 then 'menor a 25 anhos'
+	when p.edad > 25 and p.edad<=35  then 'entre 25 y 35 anhos'
+	else 'mayor a 35 anhos'
+	end as rango_edad
+	from paciente p) as aux
+group by aux.rango_edad;
+
+select p.sexo as sexo_biologico, count(*) 
+from paciente p 
+group by p.sexo;
+
+select p.genero as genero, count(*) 
+from paciente p 
+group by p.genero;
+
+select p.medicamentos as medicamentos, count(*) 
+from paciente p 
+group by p.medicamentos;
 
 select e.nombre, count(*) from paciente p inner join paciente_enfermedad pe 
 using (id_paciente) inner join enfermedad e using(id_enfermedad) group by e.nombre;
@@ -740,3 +771,74 @@ group by n.ejercicio;
 
 select e.nombre, count(*) from nutricion inner join nutricion_ejercicio ne using(id_nutricion) 
 inner join ejercicio e using(id_ejercicio) group by e.nombre;
+
+select aux.rango_peso, count(*)
+from (select n.peso, case 
+	when n.peso<= 60 then 'menor a 60 kg'
+	when n.peso > 60 and n.peso<=80  then 'entre 60 kg y 80 kg'
+	else 'mayor a 80'
+	end as rango_peso
+	from nutricion n) as aux
+group by aux.rango_peso;
+
+select aux.rango_estatura, count(*)
+from (select n.talla, case 
+	when n.talla<= 1.5 then 'menor a 1.5m'
+	when n.talla > 1.5 and n.talla<=1.8  then 'entre 1.5m y 1.8m'
+	else 'mayor a 1.8m'
+	end as rango_estatura
+	from nutricion n) as aux
+group by aux.rango_estatura;
+
+select aux.rango_dias_act_fisica, count(*)
+from (select n.talla, case 
+	when n.dias_semanales_actividad_fisica<= 2 then 'menos de 2 dias'
+	when n.dias_semanales_actividad_fisica > 2 and n.dias_semanales_actividad_fisica<=4  then 'entre 2 y 4 dias'
+	else 'mas de 4 dias'
+	end as rango_dias_act_fisica
+	from nutricion n) as aux
+group by aux.rango_dias_act_fisica;
+
+---4)SUENO
+select * from sueno s;
+
+select s.ronca  , count(*)
+from sueno s  
+group by s.ronca ;
+
+select s.pararce_noche  , count(*)
+from sueno s 
+group by s.pararce_noche ;
+
+select s.pesadillas, count(*)
+from sueno s 
+group by s.pesadillas;
+
+select aux.rango_sueno, count(*)
+from (select s.horas_sueno, case 
+	when s.horas_sueno <= 5 then 'menor a 6'
+	when s.horas_sueno > 6 then ' mayor a 6'
+	else 'igual a 6'
+	end as rango_sueno
+	from sueno s) as aux
+group by aux.rango_sueno;
+
+
+---5)PSICOLOGIA
+select * from psicologia p;
+
+select p.agotamiento_emocional , count(*)
+from psicologia p 
+group by p.agotamiento_emocional ;
+
+select p.afecta_la_vida , count(*)
+from psicologia p 
+group by p.afecta_la_vida ;
+
+select p.preocupaciones, count(*)
+from psicologia p 
+group by p.preocupaciones;
+
+select p.tiempo_preocupaciones, count(*)
+from psicologia p 
+group by p.tiempo_preocupaciones;
