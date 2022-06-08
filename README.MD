@@ -27,6 +27,15 @@ El proyecto está desarrollado con una base de datos de Postqresql, la cual se a
 
 Una vez instalado el programa, descargue la carpeta *ProyectoHealthCare*, la cual contiene la base de datos y la interfaz gráfica. Una vez que se descarga la carpeta, descomprimala si es que se descargo en terminación .zip y de click en el archivo ProyectoHealthCare.snl, el cual ejecutará por sí mismo el programa. Finalmente, haga click en el bóton de *Ejecutar*, el cual tiene un dibujo de una flecha verde.
 
+## Funcionalidades de la interfaz
 
+- Contiene un *log in*, el cual permite diferenciar los usuarios y, más importante aún, a la médica general del resto de médicos. La necesidad de esta funcionalidad radica en que cada médico tiene sus pacientes y la médica general tiene funciones que nigún otro médico tiene.
+- Es posible visualizar toda la información, de cualquier categoría de la salud de los pacientes que cada médico atiende, más no de los que no. Además, la médica general puede ver la información de cualquier paciente.
+- Cualquier médico puede ver las notas sobre su paciente, más sin embargo sólo le es posible modificar las notas propias. Esto sirve para dar diagnósticos más integrados entre las diferentes ramas de estudio de la salud.
+- Cada médico puede crear nuevas notas de las consultas con sus pacientes, o puede quitar la vigencia de un diágnostico equivocado, por ejemplo.
+- La médica general puede dar acceso (o quitarlo) a otros médicos a editar la información de un paciente, lo que significa que ahora existe una nueva realición médico-paciente.
+- A cada médico se le presenta en su interfaz principal información general, estadística, del conglomerado de sus pacientes.
+- Ante anomalías o casos extraordinarios la médica general puede comunicar una *NOTA GENERAL* que será visible para todos los médicos que atiendan a ese paciente.
+- Cualquier médico puede cambiar su contraseña para logearse.
 
 
