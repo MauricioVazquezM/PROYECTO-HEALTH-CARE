@@ -14,10 +14,10 @@ namespace ProyectoHealthCare.Clases
     {
         NpgsqlConnection conex = new NpgsqlConnection();
 
-        static String servidor = "localhost";
-        static String bd = "Plenna";
+        static String servidor = "plenna.czwerljswhwy.us-east-1.rds.amazonaws.com";
+        static String bd = "Plennadb";
         static String usuario = "postgres";
-        static String password = "mauri245";
+        static String password = "Mougli1099";
         static String puerto = "5432";
 
 

@@ -23,7 +23,7 @@ namespace ProyectoHealthCare
         public MedicoGeneral()
         {
             InitializeComponent();
-            cj.Navigate(new Uri("http://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg")); 
+            cj.Navigate(new Uri("http://localhost:3000")); 
             Clases.CConexion.llenarComboPacientesGen(pacientes);
 
             String correo = Application.Current.Properties["correo"].ToString();
