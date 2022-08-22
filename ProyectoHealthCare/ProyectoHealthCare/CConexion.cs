@@ -14,11 +14,11 @@ namespace ProyectoHealthCare.Clases
     {
         NpgsqlConnection conex = new NpgsqlConnection();
 
-        static String servidor = "plenna.czwerljswhwy.us-east-1.rds.amazonaws.com";
+        static String servidor = "_________________";
         static String bd = "Plennadb";
-        static String usuario = "postgres";
-        static String password = "Mougli1099";
-        static String puerto = "5432";
+        static String usuario = "_______";
+        static String password = "________";
+        static String puerto = "________";
 
 
         String cadenaConexion = "server=" + servidor + ";" + "port=" + puerto + ";" + "user id=" + usuario + ";" + "password=" + password + ";" + "database=" + bd + ";";
@@ -28,7 +28,7 @@ namespace ProyectoHealthCare.Clases
             NpgsqlConnection con;
             try
             {
-                con = new NpgsqlConnection("Host=plenna.czwerljswhwy.us-east-1.rds.amazonaws.com;database=Plennadb;user id=postgres;password=Mougli1099");
+                con = new NpgsqlConnection("Host=_________;database=Plennadb;user id=________;password=_________");
                 con.Open();
             }
             catch (Exception)
