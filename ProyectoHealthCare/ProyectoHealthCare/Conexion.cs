@@ -12,7 +12,7 @@
 //{
 //    class Conexion
 //    {
-//        NpgsqlConnection conn = new NpgsqlConnection("Host = localhost; Username=postgres;Password=iceberg327;Database=PLENNA");
+//        NpgsqlConnection conn = new NpgsqlConnection("Host = localhost; Username=______;Password=_____;Database=PLENNA");
 //        public NpgsqlConnection agregarConexion(){
 //            try{
 //                conn.ConnectionString=
