@@ -24,7 +24,7 @@ Diseñar e implementar una plataforma tecnológica que permita el almacenamiento
 
 ## Cómo hacer uso de la interfaz gráfica
 
-El proyecto está desarrollado con una base de datos de Postqresql, la cual se alberga en la nube, esto nos permite que el programa sea accesible y funcional desde cualquier diapositivo. Debido a lo anterior es que, para hacer uso de la interfaz que se ha desarrollado y que puede servir para realizar sus operaciones, basta con descargar la carpeta *Ejecutable*, descomprimir y dar click en el archivo *ProyectoHealthCare.exe* que se encuentra en este mismo repositorio, otorgar los permisos para acceder a la interfaz y listo, ya podrá utilizar la plataforma sin necesidad de instalar nada, gozando de la interfaz como una aplicación de escritorio.
+- El proyecto está desarrollado con una base de datos de Postqresql, la cual se alberga en la nube, esto nos permite que el programa sea accesible y funcional desde cualquier diapositivo. Debido a lo anterior es que, para hacer uso de la interfaz que se ha desarrollado y que puede servir para realizar sus operaciones, basta con descargar la carpeta *Ejecutable*, descomprimir y dar click en el archivo *ProyectoHealthCare.exe* que se encuentra en este mismo repositorio, otorgar los permisos para acceder a la interfaz y listo, ya podrá utilizar la plataforma sin necesidad de instalar nada, gozando de la interfaz como una aplicación de escritorio.
 
 ## Funcionalidades de la interfaz
 
