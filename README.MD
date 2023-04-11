@@ -9,6 +9,7 @@ Plenna es un Start Up  que facilita el servicio de salud femenina reuniendo una 
 * [Objetivo](#objetivo)
 * [Requisitos del problema](#requisitos-del-problema) 
 * [Cómo hacer uso de la interfaz gráfica](#cómo-hacer-uso-de-la-interfaz-gráfica) 
+* [Funcionalidades de la interfaz](#Funcionalidades-de-la-interfaz)
 
 
 ## Objetivo
