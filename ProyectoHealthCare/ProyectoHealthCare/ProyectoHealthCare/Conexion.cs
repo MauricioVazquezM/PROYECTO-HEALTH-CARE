@@ -13,7 +13,7 @@ namespace ProyectoHealthCare.ProyectoHealthCare
     {
         public static SqlConnection agregarConexion()
         {
-            SqlConnection conexion = new SqlConnection("Data Source=localhost;Initial Catalog=dbPlatillos;User ID=sa;Password=sqladmin");
+            SqlConnection conexion = new SqlConnection("");
             conexion.Open();
             return conexion;
         }
